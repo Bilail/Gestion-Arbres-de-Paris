@@ -4,6 +4,7 @@ public class CompteRendu {
 	
 	private Date date;
 	private String contenu;
+	private Membre auteur;
 	
 	public CompteRendu(Date date, String contenu) {
 		this.date=date;
@@ -15,7 +16,7 @@ public class CompteRendu {
 	 */
 	@Override
 	public String toString() {
-		return "CompteRendu du " + date + " : " + "\n"
+		return "CompteRendu du " + date + "par" + auteur.getPrenom() + " " + auteur.getNom() + " : " + "\n"
 				+ contenu ;
 	}
 

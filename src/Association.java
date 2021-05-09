@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Association implements Notifiable {
 	
-	private ArrayList<Membre> membres;
+	private ArrayList<Membre> membres; //  je propose plutot liste_membre sinon on va se mélanger les pinceaux
 	private Budget budget;
 	private ArrayList<Donateur> donateurs;
 	

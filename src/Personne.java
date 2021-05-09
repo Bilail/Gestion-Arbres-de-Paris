@@ -3,7 +3,7 @@ public class Personne implements Notifiable,Donateur {
 	
 	private String nom;
 	private String prenom;
-	private String DateNaissance;
+	private String DateNaissance; // je propose le type date directement 
 	private String Adresse;
 	
 	Personne(String nom, String prenom){

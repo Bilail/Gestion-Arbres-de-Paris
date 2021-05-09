@@ -7,8 +7,8 @@ public class Arbre {
 	private int circonference,hauteur;
 	private Point GPS = new Point();
 	private boolean remarquable;
-	private String DateDerniereVisite, DateClassification;
-	private ArrayList<CompteRendu> ComptesRendus = new ArrayList<CompteRendu>();
+	private String DateDerniereVisite, DateClassification; // pk pas utiliser le type date
+	private ArrayList<CompteRendu> ComptesRendus = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
 	
 	/**
 	 * Constructeur sans paramètre qui crée un arbre "vide"
@@ -27,6 +27,28 @@ public class Arbre {
 		this.genre=genre;
 		this.espece=espece;
 		this.nom=nom;
+	}
+	
+	/**
+	 * Constructeur complet 
+	 * @param genre
+	 * @param espece
+	 * @param nom
+	 * @param GPS
+	 * @param circonference
+	 * @param hauteur
+	 * @param remarquable
+	 * @param dev
+	 */
+	public Arbre(String genre, String espece, String nom, Point GPS, int circonference, int hauteur , boolean remarquable, String dev ) {
+		this.genre=genre;
+		this.espece=espece;
+		this.nom=nom;
+		this.GPS = GPS;
+		this.circonference = circonference;
+		this.hauteur = hauteur;
+		this.remarquable = remarquable;
+		this.dev = dev;
 	}
 	
 	public String getGenre() {

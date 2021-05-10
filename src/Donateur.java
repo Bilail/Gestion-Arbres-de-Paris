@@ -1,5 +1,5 @@
 
 public interface Donateur {
 
-	void Donation(Association association, Float somme);
+	void Donation(Association association, float montant);
 }

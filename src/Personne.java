@@ -4,35 +4,52 @@ public class Personne implements Notifiable,Donateur {
 	private String nom;
 	private String prenom;
 	private String DateNaissance; // je propose le type date directement 
-	private String Adresse;
+	private String adresse;
 	
-	Personne(String nom, String prenom){
+	/**
+	 * Constructeur de Personne prenant en compte les propriétés d'une Personne
+	 * @param nom le nom de la Personne 
+	 * @param prenom le Prenom de la personne 
+	 * @param adresse l'adresse de la Personne 
+	 * @param DateNaissance la date de naissance de la Personne 
+	 */
+	Personne(String nom, String prenom, String adresse, String DateNaissance){
 		this.nom=nom;
 		this.prenom=prenom;
+		this.adresse=adresse;
+		this.DateNaissance= DateNaissance;
 	}
 	
-	private void SetDateNaissance(String DateNaissance) {
-		this.DateNaissance=DateNaissance;
-	}
-	
-	private void SetAdresse(String Adresse) {
-		this.Adresse=Adresse;
-	}
-	
+	/**
+	 * Methode d'accès au nom de la personne
+	 * @return le nom de la personne
+	 */
 	public String getNom() {
 		return nom;
 	}
 	
+	/**
+	 * Methode d'accès au prenom de la personne
+	 * @return le prenom de la personne
+	 */
 	public String getPrenom() {
 		return prenom;
 	}
 	
+	/**
+	 * Methode d'accès à la date de naissance de la personne
+	 * @return la date de naissance de la personne
+	 */
 	public String getDateNaissance() {
 		return DateNaissance;
 	}
 	
+	/**
+	 * Methode d'accès à l'adresse  de la personne
+	 * @return l'adresse de la personne
+	 */
 	public String getAdresse() {
-		return Adresse;
+		return adresse;
 	}
 	
 	/**
@@ -41,8 +58,14 @@ public class Personne implements Notifiable,Donateur {
 	public void notifier(Notification notification){
 		notification.toString();
 	}
-
-	public void Donation(Association association, Float somme) {
+	
+	
+	/**
+	 * Méthode permettant à une personne d'effectuer un don à une association
+	 */
+	public void Donation(Association association, float montant) {
 		
+		Transaction transaction = new Transaction(montant, "don d'un particulier");
+		association.EffectuerTransaction(transaction);
 	}
 }

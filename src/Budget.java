@@ -12,9 +12,10 @@ public class Budget {
 	 */
 	public Budget() {
 		ExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
+		somme=0;
 		EBactuel=new ExerciceBudgetaire(this);
-		this.somme=0;
 	}
+	
 	
 	/**
 	 * Methode d'accès au montant actuel du Budget

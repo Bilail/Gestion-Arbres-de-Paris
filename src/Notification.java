@@ -14,8 +14,8 @@ public class Notification {
 	 * @param description description de l'action effectuée sur l'abre
 	 * @param arbre l'arbre sur lequel l'action a été effectuée
 	 */
-	public Notification(Date DateNotification, String description, Arbre arbre) {
-		this.DateNotification=DateNotification;
+	public Notification(String description, Arbre arbre) {
+		DateNotification = new Date();
 		this.description=description;
 		this.arbre=arbre;
 	}

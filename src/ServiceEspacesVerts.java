@@ -16,7 +16,7 @@ public class ServiceEspacesVerts {
 		
 		arbre.setRemarquable(remarquable);
 		
-		Notification notification = new Notification(new Date(),"classification",arbre);
+		Notification notification = new Notification("classification",arbre);
 		
 		for(Notifiable i :notifiables) {
 			i.notifier(notification);
@@ -29,7 +29,7 @@ public class ServiceEspacesVerts {
 	 * @param remarquable vaut true si l'arbre est remarquable, false sinon
 	 * @param DateClassification date à laquelle l'arbre a été classifié
 	 */
-	void Classifier (Arbre arbre, boolean remarquable, String DateClassification) {
+	void Classifier (Arbre arbre, boolean remarquable, Date DateClassification) {
 		this.Classifier(arbre, remarquable);
 		arbre.setDateClassification(DateClassification);
 		
@@ -45,7 +45,7 @@ public class ServiceEspacesVerts {
 		arbre.setAdresse(Adresse);
 		arbre.setGPS(GPS);
 		
-		Notification notification = new Notification(new Date(),"plantation",arbre);
+		Notification notification = new Notification("plantation",arbre);
 		
 		for(Notifiable i :notifiables) {
 			i.notifier(notification);
@@ -57,17 +57,17 @@ public class ServiceEspacesVerts {
 	 * @param arbre l'arbre à abattre
 	 */
 	void Abattre(Arbre arbre) {
-		arbre=null;
-		
-		Notification notification = new Notification(new Date(),"Abattage",arbre);
+	
+		Notification notification = new Notification("Abattage",arbre);
 		
 		for(Notifiable i :notifiables) {
 			i.notifier(notification);
 		}
+		arbre=null;
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
 
 	}
 

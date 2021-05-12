@@ -3,17 +3,17 @@ import java.util.ArrayList;
 
 public class Association implements Notifiable {
 	
-	private ArrayList<Membre> membres; //  je propose plutot liste_membre sinon on va se mélanger les pinceaux
+	private ArrayList<Membre> ListeMembres;
 	private Budget budget;
-	private ArrayList<Donateur> donateurs;
+	private ArrayList<Donateur> ListeDonateurs;
 	
 	/**
 	 * Constructeur par défaut de l'association
 	 */
 	public Association() {
-		membres= new ArrayList<Membre>();
-		donateurs=new ArrayList<Donateur>();
-		budget=new Budget();
+		ListeMembres= new ArrayList<Membre>();
+		ListeDonateurs=new ArrayList<Donateur>();
+		budget = new Budget(); 
 	}
 	
 	/**
@@ -21,7 +21,7 @@ public class Association implements Notifiable {
 	 * @param membre
 	 */
 	void Revoquer(Membre membre) {
-		membres.remove(membre);
+		ListeMembres.remove(membre);
 		membre=null;	
 	}
 	
@@ -31,7 +31,7 @@ public class Association implements Notifiable {
 	 */
 	void inscrire(Personne personne) {
 		Membre membre = new Membre (personne,this);
-		membres.add(membre);
+		ListeMembres.add(membre);
 	}
 	
 	/**
@@ -57,7 +57,7 @@ public class Association implements Notifiable {
 		
 		A.inscrire(p);
 		
-		System.out.println(A.membres.get(0).getDateInscription());
+		System.out.println(A.ListeMembres.get(0).getDateInscription());
 	}
 	
 

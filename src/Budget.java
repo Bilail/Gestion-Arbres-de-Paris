@@ -10,10 +10,10 @@ public class Budget {
 	 * Constructeur de Budget avec un montant initial
 	 * @param le montant initial du budget
 	 */
-	public Budget(float somme) {
+	public Budget() {
 		ExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
-		this.somme=somme;
 		EBactuel=new ExerciceBudgetaire(this);
+		this.somme=0;
 	}
 	
 	/**

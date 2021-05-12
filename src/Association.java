@@ -13,7 +13,7 @@ public class Association implements Notifiable {
 	public Association() {
 		membres= new ArrayList<Membre>();
 		donateurs=new ArrayList<Donateur>();
-		budget=new Budget(); //a rectifier
+		budget=new Budget();
 	}
 	
 	/**

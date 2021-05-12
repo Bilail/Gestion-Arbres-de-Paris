@@ -10,11 +10,12 @@ public class Budget {
 	 * Constructeur de Budget avec un montant initial
 	 * @param le montant initial du budget
 	 */
-	public Budget(float somme) {
+	public Budget() {
 		ExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
-		this.somme=somme;
+		somme=0;
 		EBactuel=new ExerciceBudgetaire(this);
 	}
+	
 	
 	/**
 	 * Methode d'accès au montant actuel du Budget

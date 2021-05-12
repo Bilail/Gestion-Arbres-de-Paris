@@ -1,4 +1,5 @@
 import java.awt.Point;
+import java.util.Date;
 import java.util.ArrayList;
 
 public class Arbre {
@@ -7,8 +8,8 @@ public class Arbre {
 	private int circonference,hauteur;
 	private Point GPS = new Point();
 	private boolean remarquable;
-	private String DateDerniereVisite, DateClassification; // pk pas utiliser le type date
-	private ArrayList<CompteRendu> ComptesRendus = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
+	private Date DateDerniereVisite, DateClassification; 
+	private ArrayList<CompteRendu> listeCR = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
 	
 	/**
 	 * Constructeur sans paramètre qui crée un arbre "vide"
@@ -123,30 +124,30 @@ public class Arbre {
 		this.remarquable = remarquable;
 	}
 
-	public String getDateDerniereVisite() {
+	public Date getDateDerniereVisite() {
 		return this.DateDerniereVisite;
 	}
 
-	private void setDateDerniereVisite(String dateDerniereVisite) {
+	private void setDateDerniereVisite(Date dateDerniereVisite) {
 		DateDerniereVisite = dateDerniereVisite;
 	}
 	
 
-	public String getDateClassification() {
+	public Date getDateClassification() {
 		return DateClassification;
 	}
 
-	void setDateClassification(String dateClassification) {
+	void setDateClassification(Date dateClassification) {
 		DateClassification = dateClassification;
 	}
 	
 	public ArrayList<CompteRendu> getListeComptesRendus() {
-		return ComptesRendus;
+		return listeCR;
 	}
 
 	private void setListeComptesRendus(ArrayList<CompteRendu> comptesRendus) {
 
-		ComptesRendus = comptesRendus;
+		listeCR = comptesRendus;
 	}
 
 	/**
@@ -165,7 +166,7 @@ public class Arbre {
 			   "caractère remarquable : " + remarquable + "\n" +
 			   "date de dernière vidite : " + DateDerniereVisite + "\n" +
 			   "date de classification : " + DateClassification + "\n" +
-			   "comptes rendus sur l'abres : " + ComptesRendus.toString() + "\n" ;
+			   "comptes rendus sur l'abres : " + listeCR.toString() + "\n" ;
 	}
 	
 	

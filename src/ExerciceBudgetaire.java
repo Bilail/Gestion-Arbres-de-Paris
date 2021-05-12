@@ -11,6 +11,7 @@ public class ExerciceBudgetaire{
 	 */
 	public ExerciceBudgetaire(Budget budget) {
 		annee= new Date().getYear();
+		historique = new StringBuilder();
 		historique.append( "Budget initial :" + budget.getSomme() + "\n");
 	}
 	

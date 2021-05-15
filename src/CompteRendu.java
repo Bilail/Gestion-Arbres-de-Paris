@@ -5,12 +5,12 @@ public class CompteRendu {
 	private Date date;
 	private String contenu;
 	private Membre auteur;
-	private Arbre abr;
+	private Arbre arbre;
 	
-	public CompteRendu(String contenu, Arbre abr) {
-		date= new Date();
+	public CompteRendu(String contenu, Arbre arbre) {
+		date = new Date();
 		this.contenu=contenu;
-		this.abr = abr;
+		this.arbre = arbre;
 	}
 	
 	/**
@@ -19,7 +19,7 @@ public class CompteRendu {
 	@Override
 	public String toString() {
 		return "CompteRendu du " + date + "par" + auteur.getPrenom() + " " + auteur.getNom() + " : " + "\n"
-				+ contenu + "arbre : " + abr;
+				+ contenu + "arbre : " + arbre;
 	}
 
 }	

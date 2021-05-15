@@ -7,8 +7,8 @@ public class CompteRendu {
 	private Membre auteur;
 	private Arbre abr;
 	
-	public CompteRendu(Date date, String contenu, Arbre abr) {
-		this.date=date;
+	public CompteRendu(String contenu, Arbre abr) {
+		date= new Date();
 		this.contenu=contenu;
 		this.abr = abr;
 	}

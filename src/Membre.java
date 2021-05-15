@@ -3,9 +3,10 @@ import java.util.Date;
 
 public class Membre extends Personne {
 	
-	private Date DateInscription;
+	private Date dateInscription;
 	private Association association;
-	private ArrayList<Float> CotisationsAnnuelles;
+	private ArrayList<Arbre> nominations;
+	private ArrayList<Float> listeCotisationsAnnuelles;
 	
 	/**
 	 * Constructeur d'un membre de l'association à partir d'une personne
@@ -16,7 +17,7 @@ public class Membre extends Personne {
 	Membre(Personne p, Association association){
 		super(p.getNom(), p.getPrenom(),p.getAdresse(),p.getDateNaissance());
 		this.association=association;
-		this.DateInscription=new Date();
+		this.dateInscription=new Date();
 	}
 	
 	/**
@@ -24,7 +25,7 @@ public class Membre extends Personne {
 	 * @return DateInscription
 	 */
 	public Date getDateInscription() {
-		return DateInscription;
+		return dateInscription;
 	}
 	
 	/**
@@ -32,15 +33,31 @@ public class Membre extends Personne {
 	 * @return les CotisationAnnuelles
 	 */
 	public ArrayList<Float> getCotisationsAnnuelles() {
-		return CotisationsAnnuelles;
+		return listeCotisationsAnnuelles;
 	}
-
+	
+	/**
+	 * 
+	 */
+	public ArrayList<Arbre> getNominations(){
+		return nominations;
+	}
+	
 	/**
 	 * Méthode permettant à un membre de cotiser pour l'association
 	 * @param somme le montant de la cotisation
 	 */
 	public void Cotiser(float somme) {
-		CotisationsAnnuelles.add(somme);
+		listeCotisationsAnnuelles.add(somme);
+	}
+	
+	public void nominer(Arbre arbre) {
+		
+		if(nominations.size()==5) {
+			nominations.remove(0);
+		}
+		
+		nominations.add(arbre);
 	}
 
 	/**

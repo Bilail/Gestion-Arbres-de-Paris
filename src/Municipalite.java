@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Municipalite implements Donateur {
 	
-	private ArrayList<Arbre> ListeArbres;
+	private ArrayList<Arbre> listeArbres;
 	private ServiceEspacesVerts SEV;
 	
 
@@ -13,6 +13,10 @@ public class Municipalite implements Donateur {
 		
 		Transaction transaction = new Transaction(montant, "don de la municipalité");
 		association.EffectuerTransaction(transaction);
+	}
+	
+	public ArrayList<Arbre> getListArbre(){
+		return listeArbres;
 	}
 
 }

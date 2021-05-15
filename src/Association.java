@@ -3,16 +3,17 @@ import java.util.ArrayList;
 
 public class Association implements Notifiable {
 	
-	private ArrayList<Membre> ListeMembres;
+	private ArrayList<Membre> listeMembres;
 	private Budget budget;
-	private ArrayList<Donateur> ListeDonateurs;
+	private ArrayList<Donateur> listeDonateurs;
+	private Municipalite mairie;
 	
 	/**
 	 * Constructeur par défaut de l'association
 	 */
 	public Association() {
-		ListeMembres= new ArrayList<Membre>();
-		ListeDonateurs=new ArrayList<Donateur>();
+		listeMembres= new ArrayList<Membre>();
+		listeDonateurs=new ArrayList<Donateur>();
 		budget = new Budget(); 
 	}
 	
@@ -21,7 +22,7 @@ public class Association implements Notifiable {
 	 * @param membre
 	 */
 	void Revoquer(Membre membre) {
-		ListeMembres.remove(membre);
+		listeMembres.remove(membre);
 		membre=null;	
 	}
 	
@@ -31,7 +32,7 @@ public class Association implements Notifiable {
 	 */
 	void inscrire(Personne personne) {
 		Membre membre = new Membre (personne,this);
-		ListeMembres.add(membre);
+		listeMembres.add(membre);
 	}
 	
 	/**
@@ -49,6 +50,50 @@ public class Association implements Notifiable {
 		notification.toString();
 	}
 	
+	public ArrayList<Arbre> nominer(Municipalite mairie) {
+		
+		ArrayList<Arbre> nominations= new ArrayList<Arbre>();
+		
+		for(Membre membre : listeMembres) {
+			for(int i=0 ; i<membre.getNominations().size(); i++) {
+			membre.getNominations().get(i).nominer();
+			}
+		}
+		
+		for(int j=0; j<5; j++) {
+			
+			
+			for(Arbre arbre : mairie.getListArbre()) {
+				if(nominations.get(j)==null) {
+					nominations.add(j,arbre);
+				}
+				else if(arbre.getNbNominations()>nominations.get(j).getNbNominations()){
+					nominations.add(j,arbre);
+				}
+				else if(arbre.getNbNominations()==nominations.get(j).getNbNominations()){
+					
+					 if(arbre.getCirconference()>nominations.get(j).getNbNominations()) {
+						 nominations.add(j,arbre);
+					 }
+					 else if(arbre.getCirconference()==nominations.get(j).getNbNominations()) {
+						 
+						  if(arbre.getHauteur()>nominations.get(j).getHauteur()) {
+							 nominations.add(j,arbre);
+						  }
+					 }
+				}
+			}
+			nominations.get(j).resetNominations();
+		}
+		return nominations;
+	}
+	
+	private void finExerciceBudgetaire() {
+		budget.changementAnnee();
+		nominer(mairie);
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		Association A = new Association();
@@ -57,7 +102,7 @@ public class Association implements Notifiable {
 		
 		A.inscrire(p);
 		
-		System.out.println(A.ListeMembres.get(0).getDateInscription());
+		System.out.println(A.listeMembres.get(0).getDateInscription());
 	}
 	
 

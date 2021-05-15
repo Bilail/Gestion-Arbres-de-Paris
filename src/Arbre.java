@@ -10,6 +10,7 @@ public class Arbre {
 	private boolean remarquable;
 	private Date DateDerniereVisite, DateClassification; 
 	private ArrayList<CompteRendu> listeCR = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
+	private int nbNominations;
 	
 	/**
 	 * Constructeur sans paramètre qui crée un arbre "vide"
@@ -143,6 +144,18 @@ public class Arbre {
 	
 	public ArrayList<CompteRendu> getListeComptesRendus() {
 		return listeCR;
+	}
+	
+	public int getNbNominations() {
+		return nbNominations;
+	}
+	
+	void nominer() {
+		nbNominations = nbNominations+1;
+	}
+	
+	void resetNominations() {
+		nbNominations = 0;
 	}
 
 	private void setListeComptesRendus(ArrayList<CompteRendu> comptesRendus) {

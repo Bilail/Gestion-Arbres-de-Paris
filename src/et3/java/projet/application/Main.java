@@ -4,12 +4,13 @@ package et3.java.projet.application;
 import java.io.File;
 import java.util.ArrayList;
 
-import com.sun.nio.sctp.Association;
-
 import Mairie.Arbre;
 import Mairie.Municipalite;
+import Asso.Association;
+
 import et3.java.projet.data.FileReader;
 import et3.java.projet.data.*;
+
 public class Main 
 {
 	
@@ -45,6 +46,9 @@ public class Main
 		// Création des Organismes 
 		Municipalite Mairie = new Municipalite();
 		Mairie.setListeArbres(listeArbres);
+		Association Asso = new Association();
+		System.out.println(Mairie.getListArbre());
+		
 		
 	}
 }

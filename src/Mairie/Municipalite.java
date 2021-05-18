@@ -13,6 +13,11 @@ public class Municipalite implements Donateur, Notifiable {
 	private ServiceEspacesVerts SEV;
 	
 
+	public Municipalite() {
+		listeArbres = new ArrayList<Arbre>();
+	}
+	
+	
 	/**
 	 * Méthode permettant à la municipalité d'effectuer un don à une association
 	 */
@@ -29,6 +34,10 @@ public class Municipalite implements Donateur, Notifiable {
 
 	public void notifier(Notification notification) {
 		notification.toString();		
+	}
+	
+	public void setListeArbres(ArrayList<Arbre> liste_arbre) {
+		listeArbres = liste_arbre;
 	}
 
 }

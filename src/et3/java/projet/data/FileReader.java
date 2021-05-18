@@ -9,10 +9,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import Mairie.Arbre;
+import Mairie.Municipalite;
+
 public class FileReader 
 {
-	public static void getDataFromCSVFile(String csvFilePath)
+	public static ArrayList<Arbre> getDataFromCSVFile(String csvFilePath)
 	{
+		ArrayList<Arbre> listeArbres = new ArrayList<Arbre>();
+		
         String line = "";
         String[] data = null;
         String separator = ";(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
@@ -46,7 +51,7 @@ public class FileReader
         	if(data.length != 17)
         	{
         		System.out.println("[FileReader] The file at " + csvFilePath + " does not contain the right number of columns.");
-        		return;
+        		return listeArbres;
         	}
         	
         	int i = 1;
@@ -180,7 +185,8 @@ public class FileReader
                 		remarquable + ";" +
                 		"(" + geographicalPoint2D[0] + "," + geographicalPoint2D[1] + ")");
                 
-                Arbre(genre,espece,geographicalPoint2D,circonferenceEnCm,hauteurEnM,remarquable,stadeDeveloppement);
+
+                listeArbres.add(new Arbre(genre,espece,geographicalPoint2D,circonferenceEnCm,hauteurEnM,remarquable,stadeDeveloppement));
                 
 
      	
@@ -190,5 +196,6 @@ public class FileReader
         {
             System.err.println(exception);
         }
+        return listeArbres;
 	}
 }

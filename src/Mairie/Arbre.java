@@ -10,7 +10,7 @@ public class Arbre {
 	
 	private String genre, espece, nom, dev, adresse;
 	private int circonference,hauteur;
-	private Point GPS = new Point();
+	private  Float[] GPS;
 	private boolean remarquable;
 	private Date dateDerniereVisite, dateClassification; 
 	private ArrayList<CompteRendu> listeCR = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
@@ -46,7 +46,7 @@ public class Arbre {
 	 * @param remarquable
 	 * @param dev
 	 */
-	public Arbre(String genre, String espece, Point GPS, int circonference, int hauteur , boolean remarquable, String dev ) {
+	public Arbre(String genre, String espece, Float[] GPS, int circonference, int hauteur , boolean remarquable, String dev ) {
 		this.genre=genre;
 		this.espece=espece;
 		//this.nom=nom;
@@ -113,11 +113,11 @@ public class Arbre {
 		this.hauteur = hauteur;
 	}
 
-	public Point getGPS() {
+	public Float[] getGPS() {
 		return GPS;
 	}
 
-	void setGPS(Point GPS) {
+	void setGPS(Float[] GPS) {
 		this.GPS = GPS;
 	}
 
@@ -179,7 +179,7 @@ public class Arbre {
 			   "adresse : " + getAdresse() + "\n" +
 			   "circonference : " + getCirconference() + "\n" +
 			   "hauteur : " + getHauteur() + "\n" +
-			   "coordonnées GPS : " + "(" + GPS.getX() + "," + GPS.getY() + ")" + "\n" +
+			   "coordonnées GPS : " + "(" + GPS[0] + "," + GPS[1] + ")" + "\n" +
 			   "caractère remarquable : " + getRemarquable() + "\n" +
 			   "date de dernière vidite : " + dateDerniereVisite + "\n" +
 			   "date de classification : " + dateClassification + "\n" +
@@ -192,7 +192,10 @@ public class Arbre {
 	public static void main(String[] args) {
 	
 		Arbre arbre = new Arbre("truc","bidule","chouette");
-		arbre.setGPS(new Point(4,3));
+		Float[] coordonne =  new Float[2];
+		coordonne[0] = (float) 1.1;
+		coordonne[1] = (float) 2.2;
+		arbre.setGPS(coordonne);
 		System.out.println(arbre);
 
 	}

@@ -46,7 +46,7 @@ public class ServiceEspacesVerts {
 	 * @param GPS les futures coordonnées GPS l'arbre
 	 * @param Adresse la future adresse de l'arbre
 	 */
-	void Planter(Arbre arbre,Point GPS, String Adresse) {
+	void Planter(Arbre arbre,Float[] GPS, String Adresse) {
 		arbre.setAdresse(Adresse);
 		arbre.setGPS(GPS);
 		

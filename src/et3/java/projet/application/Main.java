@@ -2,18 +2,22 @@ package et3.java.projet.application;
 
 
 import java.io.File;
+import java.util.ArrayList;
 
 import com.sun.nio.sctp.Association;
 
+import Mairie.Arbre;
+import Mairie.Municipalite;
 import et3.java.projet.data.FileReader;
 import et3.java.projet.data.*;
 public class Main 
 {
 	
-	
 	/*TEST*/
 	public static void main(String[] args) 
-	{		
+	{	
+		ArrayList<Arbre> listeArbres  = new ArrayList<Arbre>();;
+		
 		if(args.length > 0)
 		{
 			File tempFile = new File(args[0]);
@@ -23,7 +27,7 @@ public class Main
 				System.out.println("[Main] Reading the file " + args[0] + " ...");
 						
 				//We start by reading the CSV file
-				FileReader.getDataFromCSVFile(args[0]);
+				listeArbres  = FileReader.getDataFromCSVFile(args[0]);
 				
 				System.out.println("[Main] End of the file " + args[0] + ".");
 			}
@@ -37,6 +41,10 @@ public class Main
 			System.out.println("[Main] You should enter the CSV file path as a parameter.");
 		}
 		
-		//TODO Project :)
+		
+		// Création des Organismes 
+		Municipalite Mairie = new Municipalite();
+		Mairie.setListeArbres(listeArbres);
+		
 	}
 }

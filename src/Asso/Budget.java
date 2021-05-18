@@ -1,3 +1,4 @@
+package Asso;
 import java.util.ArrayList;
 
 public class Budget {

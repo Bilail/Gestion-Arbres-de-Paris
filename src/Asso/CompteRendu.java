@@ -1,4 +1,8 @@
+package Asso;
 import java.util.Date;
+
+import Mairie.Arbre;
+import entite.Membre;
 
 public class CompteRendu {
 	

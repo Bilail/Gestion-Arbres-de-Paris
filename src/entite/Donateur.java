@@ -1,3 +1,5 @@
+package entite;
+import Asso.Association;
 
 public interface Donateur {
 

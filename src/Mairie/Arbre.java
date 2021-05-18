@@ -1,5 +1,9 @@
+package Mairie;
 import java.awt.Point;
 import java.util.Date;
+
+import Asso.CompteRendu;
+
 import java.util.ArrayList;
 
 public class Arbre {
@@ -42,10 +46,10 @@ public class Arbre {
 	 * @param remarquable
 	 * @param dev
 	 */
-	public Arbre(String genre, String espece, String nom, Point GPS, int circonference, int hauteur , boolean remarquable, String dev ) {
+	public Arbre(String genre, String espece, Point GPS, int circonference, int hauteur , boolean remarquable, String dev ) {
 		this.genre=genre;
 		this.espece=espece;
-		this.nom=nom;
+		//this.nom=nom;
 		this.GPS = GPS;
 		this.circonference = circonference;
 		this.hauteur = hauteur;
@@ -150,11 +154,11 @@ public class Arbre {
 		return nbNominations;
 	}
 	
-	void nominer() {
+	public void nominer() {
 		nbNominations = nbNominations+1;
 	}
 	
-	void resetNominations() {
+	public void resetNominations() {
 		nbNominations = 0;
 	}
 

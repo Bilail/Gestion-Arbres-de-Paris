@@ -1,6 +1,11 @@
+package Mairie;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Date;
+
+import Asso.Notifiable;
+import Asso.Notification;
+import Asso.NotificationArbre;
 
 public class ServiceEspacesVerts {
 	

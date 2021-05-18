@@ -1,3 +1,5 @@
+package Asso;
+import Mairie.Arbre;
 
 public class NotificationArbre extends Notification {
 	

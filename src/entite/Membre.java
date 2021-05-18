@@ -1,5 +1,9 @@
+package entite;
 import java.util.ArrayList;
 import java.util.Date;
+
+import Asso.Association;
+import Mairie.Arbre;
 
 public class Membre extends Personne {
 	
@@ -14,7 +18,7 @@ public class Membre extends Personne {
 	 * @param p la personne qui devient membre de l'association
 	 * @param association l'association dont fait partie le membre
 	 */
-	Membre(Personne p, Association association){
+	public Membre(Personne p, Association association){
 		super(p.getNom(), p.getPrenom(),p.getAdresse(),p.getDateNaissance());
 		this.association=association;
 		this.dateInscription=new Date();

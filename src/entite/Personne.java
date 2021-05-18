@@ -1,3 +1,8 @@
+package entite;
+import Asso.Association;
+import Asso.Notifiable;
+import Asso.Notification;
+import Asso.Transaction;
 
 public class Personne implements Notifiable,Donateur {
 	
@@ -13,7 +18,7 @@ public class Personne implements Notifiable,Donateur {
 	 * @param adresse l'adresse de la Personne 
 	 * @param DateNaissance la date de naissance de la Personne 
 	 */
-	Personne(String nom, String prenom, String adresse, String DateNaissance){
+	public Personne(String nom, String prenom, String adresse, String DateNaissance){
 		this.nom=nom;
 		this.prenom=prenom;
 		this.adresse=adresse;

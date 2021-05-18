@@ -1,5 +1,12 @@
+package Asso;
 
 import java.util.ArrayList;
+
+import Mairie.Arbre;
+import Mairie.Municipalite;
+import entite.Donateur;
+import entite.Membre;
+import entite.Personne;
 
 public class Association implements Notifiable {
 	
@@ -21,7 +28,7 @@ public class Association implements Notifiable {
 	 * Méthode permettant de révoquer un membre de l'association
 	 * @param membre
 	 */
-	void Revoquer(Membre membre) {
+	public void Revoquer(Membre membre) {
 		listeMembres.remove(membre);
 		membre=null;	
 	}
@@ -57,7 +64,7 @@ public class Association implements Notifiable {
 	 * Methode permettant de mettre a jour le budget de l'association suite à une transaction
 	 * @param transaction la transaction effectuée
 	 */
-	void EffectuerTransaction(Transaction transaction) {
+	public void EffectuerTransaction(Transaction transaction) {
 		budget.CalculBudget(transaction);
 	}
 	

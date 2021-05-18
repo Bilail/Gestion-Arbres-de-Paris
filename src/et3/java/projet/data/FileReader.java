@@ -1,5 +1,6 @@
 package et3.java.projet.data;
 
+import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -178,6 +179,11 @@ public class FileReader
                 		stadeDeveloppement + ";" +
                 		remarquable + ";" +
                 		"(" + geographicalPoint2D[0] + "," + geographicalPoint2D[1] + ")");
+                
+                Arbre(genre,espece,geographicalPoint2D,circonferenceEnCm,hauteurEnM,remarquable,stadeDeveloppement);
+                
+
+     	
             }
         } 
         catch (IOException exception) 

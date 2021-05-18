@@ -8,7 +8,7 @@ public class Arbre {
 	private int circonference,hauteur;
 	private Point GPS = new Point();
 	private boolean remarquable;
-	private Date DateDerniereVisite, DateClassification; 
+	private Date dateDerniereVisite, dateClassification; 
 	private ArrayList<CompteRendu> listeCR = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
 	private int nbNominations;
 	
@@ -126,20 +126,20 @@ public class Arbre {
 	}
 
 	public Date getDateDerniereVisite() {
-		return this.DateDerniereVisite;
+		return this.dateDerniereVisite;
 	}
 
 	private void setDateDerniereVisite(Date dateDerniereVisite) {
-		DateDerniereVisite = dateDerniereVisite;
+		this.dateDerniereVisite = dateDerniereVisite;
 	}
 	
 
 	public Date getDateClassification() {
-		return DateClassification;
+		return dateClassification;
 	}
 
-	void setDateClassification(Date dateClassification) {
-		DateClassification = dateClassification;
+	void classifier(Date dateClassification) {
+		this.dateClassification = dateClassification;
 	}
 	
 	public ArrayList<CompteRendu> getListeComptesRendus() {
@@ -168,18 +168,19 @@ public class Arbre {
 	 */
 	@Override
 	public String toString() {
-		return "genre : " + genre + "\n" +
-			   "espece : " + espece + "\n" +
-			   "nom : " + nom + "\n" +
-			   "dev : " + dev + "\n" +
-			   "adresse : " + adresse + "\n" +
-			   "circonference : " + circonference + "\n" +
-			   "hauteur : " + hauteur + "\n" +
+		return "genre : " + getGenre() + "\n" +
+			   "espece : " + getEspece() + "\n" +
+			   "nom : " + getNom() + "\n" +
+			   "dev : " + getDev() + "\n" +
+			   "adresse : " + getAdresse() + "\n" +
+			   "circonference : " + getCirconference() + "\n" +
+			   "hauteur : " + getHauteur() + "\n" +
 			   "coordonnées GPS : " + "(" + GPS.getX() + "," + GPS.getY() + ")" + "\n" +
-			   "caractère remarquable : " + remarquable + "\n" +
-			   "date de dernière vidite : " + DateDerniereVisite + "\n" +
-			   "date de classification : " + DateClassification + "\n" +
-			   "comptes rendus sur l'abres : " + listeCR.toString() + "\n" ;
+			   "caractère remarquable : " + getRemarquable() + "\n" +
+			   "date de dernière vidite : " + dateDerniereVisite + "\n" +
+			   "date de classification : " + dateClassification + "\n" +
+			   "comptes rendus sur l'abres : " + listeCR.toString() + "\n" +
+			   "nombre de nominations : " + getNbNominations();
 	}
 	
 	

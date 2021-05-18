@@ -36,6 +36,24 @@ public class Association implements Notifiable {
 	}
 	
 	/**
+	 * Methode d'accès à la listeDonateurs de l'association
+	 * @return la listeDonateur de l'association
+	 */
+	public ArrayList<Donateur> getDonateurs(){
+		return listeDonateurs;
+	}
+	
+	/**
+	 * Méthode permettant l'ajout d'un nouveau Donateur à la listeDonateurs de l'association
+	 * @param donateur un nouveau Donateur
+	 */
+	public void ajouterDonateur(Object objet) {
+		if(objet instanceof Donateur){
+			listeDonateurs.add((Donateur) objet);
+		}
+	}
+	
+	/**
 	 * Methode permettant de mettre a jour le budget de l'association suite à une transaction
 	 * @param transaction la transaction effectuée
 	 */
@@ -50,6 +68,13 @@ public class Association implements Notifiable {
 		notification.toString();
 	}
 	
+	/**
+	 * Méthode permettant de transmettre à la mairie la liste des arbres qu'elle nomine pour être classifiés
+	 * comme remarquables. Liste contenant les 5 arbres les plus nominés par les membres de l'association.
+	 * En cas d'égalité, on procède par circonférence et hauteur croissante.
+	 * @param mairie la Municipalite qui tient la liste d'arbres
+	 * @return les arbres nominés par l'association
+	 */
 	public ArrayList<Arbre> nominer(Municipalite mairie) {
 		
 		ArrayList<Arbre> nominations= new ArrayList<Arbre>();
@@ -94,6 +119,12 @@ public class Association implements Notifiable {
 		
 	}
 	
+	private void demanderSubvention() {
+		for(Donateur donateur : listeDonateurs) {
+			
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		Association A = new Association();
@@ -104,6 +135,8 @@ public class Association implements Notifiable {
 		
 		System.out.println(A.listeMembres.get(0).getDateInscription());
 	}
+
+	
 	
 
 }

@@ -16,7 +16,7 @@ public class ServiceEspacesVerts {
 		
 		arbre.setRemarquable(remarquable);
 		
-		Notification notification = new Notification("classification",arbre);
+		Notification notification = new NotificationArbre("classification",arbre);
 		
 		for(Notifiable i :notifiables) {
 			i.notifier(notification);
@@ -31,7 +31,7 @@ public class ServiceEspacesVerts {
 	 */
 	void Classifier (Arbre arbre, boolean remarquable, Date DateClassification) {
 		this.Classifier(arbre, remarquable);
-		arbre.setDateClassification(DateClassification);
+		arbre.classifier(DateClassification);
 		
 	}
 	
@@ -45,7 +45,7 @@ public class ServiceEspacesVerts {
 		arbre.setAdresse(Adresse);
 		arbre.setGPS(GPS);
 		
-		Notification notification = new Notification("plantation",arbre);
+		Notification notification = new NotificationArbre("plantation",arbre);
 		
 		for(Notifiable i :notifiables) {
 			i.notifier(notification);
@@ -58,7 +58,7 @@ public class ServiceEspacesVerts {
 	 */
 	void Abattre(Arbre arbre) {
 	
-		Notification notification = new Notification("Abattage",arbre);
+		Notification notification = new NotificationArbre("Abattage",arbre);
 		
 		for(Notifiable i :notifiables) {
 			i.notifier(notification);

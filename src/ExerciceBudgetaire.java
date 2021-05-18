@@ -16,6 +16,22 @@ public class ExerciceBudgetaire{
 	}
 	
 	/**
+	 * Methode d'accès à l'année de l'ExerciceBudgetaire
+	 * @return année de l'ExerciceBudgetaire
+	 */
+	public int getAnnee() {
+		return annee;
+	}
+	
+	/**
+	 * Méthode d'accès à l'historique de l'ExerciceBudgetaire
+	 * @return historique de l'ExerciceBudgetaire
+	 */
+	public StringBuilder getHistorique() {
+		return historique;
+	}
+	
+	/**
 	 * Méthode sauvegardant l'historiques des transactions ayant eu lieu
 	 * @param transaction la transaction effectuée
 	 * @param budget le budget actuel
@@ -23,8 +39,14 @@ public class ExerciceBudgetaire{
 	void SauvegarderTransaction(Transaction transaction, Budget budget) {
 		
 		historique.append(transaction.getDate() + " " + transaction.getDescription() + transaction.getMontant()
-		+ "euros" + " buget : " + budget.getSomme());
+		+ "euros" + " budget : " + budget.getSomme());
 		
+	}
+	
+	@Override
+	public String toString() {
+		return "Exercice budgétaire de l'année : " + getAnnee() + "\n" +
+				getHistorique().toString();
 	}
 	
 	

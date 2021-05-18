@@ -3,7 +3,6 @@ import java.util.ArrayList;
 public class Budget {
 	
 	private float somme;
-	//private ExerciceBudgetaire EBactuel;
 	private ArrayList<ExerciceBudgetaire> exercicesBudgetaires;
 	
 	/**

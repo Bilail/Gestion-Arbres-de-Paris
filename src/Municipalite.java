@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Municipalite implements Donateur {
+public class Municipalite implements Donateur, Notifiable {
 	
 	private ArrayList<Arbre> listeArbres;
 	private ServiceEspacesVerts SEV;
@@ -13,10 +13,15 @@ public class Municipalite implements Donateur {
 		
 		Transaction transaction = new Transaction(montant, "don de la municipalité");
 		association.EffectuerTransaction(transaction);
+		association.ajouterDonateur((Object) this);
 	}
 	
 	public ArrayList<Arbre> getListArbre(){
 		return listeArbres;
+	}
+
+	public void notifier(Notification notification) {
+		notification.toString();		
 	}
 
 }

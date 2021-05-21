@@ -45,7 +45,7 @@ public class Main
 		
 		// Création des Organismes 
 		Municipalite Mairie = new Municipalite();
-		Mairie.setListeArbres(listeArbres);
+		Mairie.setListeArbres(listeArbres); 
 		Association Asso = new Association();
 		System.out.println(Mairie.getListArbre());
 		

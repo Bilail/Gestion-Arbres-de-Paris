@@ -1,54 +1,98 @@
-# project-java
+<div align="center" id="top"> 
+  <img src="./.github/app.gif" alt="Project Java" />
 
-## Sommaire
+  &#xa0;
 
-1. [Info Générale](#Info-generale)
-2. [Technologies](#technologies)
-3. [Architecture](#Architecture)
-4. [Collaboration](#Cllaboration)
-5. [Installation](#Installation)
+  <!-- <a href="https://projectjava.netlify.app">Demo</a> -->
+</div>
 
-## Info generale
+<h1 align="center">Project Java ET3</h1>
 
-Le but de ce projet est de créer un site de gestion d'abre à travers une assocaiation.
+<p align="center">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Bilail/project-java?color=56BEB8">
 
-*	Gestions des arbres et de leurs caractéristiques
-*	Classement arbre remarquable 
-*	Vote des membres 
-*	Visite des arbres
-*	Compte rendu
-*	Gestion du budget
-*	Subventions
-*	Rapport
-* Dépense
-*	Notification d’événement 
-*	Gestion des membres 
-*	Cotisation
-*	RGPD
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Bilail/project-java?color=56BEB8">
 
-## Technologies
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/project-java?color=56BEB8">
 
-Le logiciel est codé entierement en Java
+  <img alt="License" src="https://img.shields.io/github/license/Bilail/project-java?color=56BEB8">
 
-## Architecture 
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/project-java?color=56BEB8" /> -->
 
-![Diagramme UML ](./UML.jpg)
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/project-java?color=56BEB8" /> -->
 
-## Collaboration
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/project-java?color=56BEB8" /> -->
+</p>
 
-Ce projet a été réalisé par : Natanaël et Bilail
+<!-- Status -->
 
-Dans le cadre du Projet Java de Polytech Paris Saclay 
+<!-- <h4 align="center"> 
+	🚧  Project Java 🚀 Under construction...  🚧
+</h4> 
 
-## Installation
+<hr> -->
 
-***
-Pour pouvoir installer ce répertoire
+<p align="center">
+  <a href="#dart-about">Description </a> &#xa0; | &#xa0; 
+  <a href="#sparkles-features">Structure</a> &#xa0; | &#xa0;
+  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Installation</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Collaborations</a> &#xa0; | &#xa0;
+  <a href="#memo-license">Merci</a> &#xa0; | &#xa0;
+  <a href="https://github.com/Bilail" target="_blank">Author</a>
+</p>
 
+<br>
+
+## :dart: About ##
+
+Describe your project
+
+## :sparkles: Features ##
+
+:heavy_check_mark: Feature 1;\
+:heavy_check_mark: Feature 2;\
+:heavy_check_mark: Feature 3;
+
+## :rocket: Technologies ##
+
+The following tools were used in this project:
+
+- [Expo](https://expo.io/)
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [React Native](https://reactnative.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## :white_check_mark: Requirements ##
+
+Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+
+## :checkered_flag: Starting ##
+
+```bash
+# Clone this project
+$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/project-java
+
+# Access
+$ cd project-java
+
+# Install dependencies
+$ yarn
+
+# Run the project
+$ yarn start
+
+# The server will initialize in the <http://localhost:3000>
 ```
-$ git clone https://github.com/Bilail/project-java.git
-$ cd ../path/to/the/file
-$ npm install
-$ npm start
-```
 
+## :memo: License ##
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+
+
+Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+
+&#xa0;
+
+<a href="#top">Back to top</a>

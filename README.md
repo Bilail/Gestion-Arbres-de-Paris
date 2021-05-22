@@ -12,21 +12,23 @@
 ##Info generale
 Le but de ce projet est de créer un site de gestion d'abre à travers une assocaiation.
 
-•	Gestions des arbres et de leurs caractéristiques
-  o	Classement arbre remarquable 
-  o	Vote des membres 
-•	Visite des arbres
-  o	Compte rendu
-•	Gestion du budget
-  o	Subventions
-  o	Rapport
-  o	Dépense
-•	Notification d’événement 
-•	Gestion des membres 
-  o	Cotisation
-•	RGPD
+*	Gestions des arbres et de leurs caractéristiques
+*	Classement arbre remarquable 
+*	Vote des membres 
+*	Visite des arbres
+*	Compte rendu
+*	Gestion du budget
+*	Subventions
+*	Rapport
+* Dépense
+*	Notification d’événement 
+*	Gestion des membres 
+*	Cotisation
+*	RGPD
+***
 
 ##Technologies
+
 Le logiciel est codé entierement en Java
 ##Architecture 
 

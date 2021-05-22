@@ -1,6 +1,7 @@
 # project-java
 
 ## Sommaire
+
 1. [Info Générale](#Info-generale)
 2. [Technologies](#technologies)
 3. [Architecture](#Architecture)
@@ -10,6 +11,7 @@
 
 
 ##Info generale
+
 Le but de ce projet est de créer un site de gestion d'abre à travers une assocaiation.
 
 *	Gestions des arbres et de leurs caractéristiques
@@ -38,6 +40,7 @@ Le logiciel est codé entierement en Java
 ## Collaboration
 
 ## Installation
+
 ***
 Por pouvoir installer ce répertoire
 

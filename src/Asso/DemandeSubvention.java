@@ -10,7 +10,7 @@ public class DemandeSubvention extends Notification {
 	 */
 	public DemandeSubvention(String description) {
 		super(description);
-		budget=budget;
+		budget=budget; // A quoi sert cette ligne ? ? 
 	}
 	
 	/**

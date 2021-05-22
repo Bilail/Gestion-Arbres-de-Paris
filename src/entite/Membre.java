@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import Asso.Association;
+import Asso.Transaction;
 import Mairie.Arbre;
 
 public class Membre extends Personne {
@@ -22,6 +23,7 @@ public class Membre extends Personne {
 		super(p.getNom(), p.getPrenom(),p.getAdresse(),p.getDateNaissance());
 		this.association=association;
 		this.dateInscription=new Date();
+		listeCotisationsAnnuelles = new ArrayList<Float>();
 	}
 	
 	/**
@@ -53,6 +55,8 @@ public class Membre extends Personne {
 	 */
 	public void Cotiser(float somme) {
 		listeCotisationsAnnuelles.add(somme);
+		association.EffectuerTransaction(new Transaction(somme,"cotisation"));
+		;
 	}
 	
 	public void nominer(Arbre arbre) {
@@ -69,5 +73,10 @@ public class Membre extends Personne {
 	 */
 	private void Quitter() {
 		association.Revoquer(this);
+	}
+	
+	@Override
+	public String toString() {
+		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + association + " depsuis  " + dateInscription;
 	}
 }

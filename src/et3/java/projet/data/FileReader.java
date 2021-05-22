@@ -167,7 +167,7 @@ public class FileReader
                 
                 //TODO Do something with data
                     
-                System.out.println(
+               /* System.out.println(
                 		idBase + ";" +
                 		typeEmplacement + ";" +
                 		domanialite + ";" +
@@ -183,7 +183,7 @@ public class FileReader
                 		hauteurEnM + ";" +
                 		stadeDeveloppement + ";" +
                 		remarquable + ";" +
-                		"(" + geographicalPoint2D[0] + "," + geographicalPoint2D[1] + ")");
+                		"(" + geographicalPoint2D[0] + "," + geographicalPoint2D[1] + ")"); */
                 
 
                 listeArbres.add(new Arbre(genre,espece,geographicalPoint2D,circonferenceEnCm,hauteurEnM,remarquable,stadeDeveloppement));

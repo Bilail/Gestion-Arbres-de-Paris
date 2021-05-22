@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import Mairie.Arbre;
 import Mairie.Municipalite;
+import entite.Membre;
+import entite.Personne;
 import Asso.Association;
 
 import et3.java.projet.data.FileReader;
@@ -47,8 +49,33 @@ public class Main
 		Municipalite Mairie = new Municipalite();
 		Mairie.setListeArbres(listeArbres); 
 		Association Asso = new Association();
-		System.out.println(Mairie.getListArbre());
+		//System.out.println(Mairie.getListArbre());
+		
+		// Création des membre  
+		Membre Bilail = new Membre(new Personne("BENYAHIA","Bilail","Villepinte","14/07/2000"),Asso); // si la fonction inscrire existe je ne vois pas l'utilité du constructeur membre ? 
+		System.out.println(Bilail);
+		Membre Natanael = new Membre(new Personne("ALMEIDA","Natanael","Paris","12/07/1999"),Asso); // dsl je ne connais pas ta date de naissance hihi ^^'
+		System.out.println(Natanael);
+		
+		System.out.println("Avant inscription : ");
+		System.out.println(Asso.getListMembre());
+		Asso.inscrire(Bilail);
+		Asso.inscrire(Natanael);
+		System.out.println("Après inscription : ");
+		System.out.println(Asso.getListMembre());
+		
+		// Partie Finance 
+		System.out.println("\n------Finance------\nle budget de l'asso est de : " + Asso.getBudget().getSomme()); // On commence avec un budget de 0
+		Bilail.Cotiser(100);
+		Bilail.Cotiser(10);
+		System.out.println("\nBilail cotise, le budget de l'asso est de : " + Asso.getBudget().getSomme());
+		System.out.println("\nsur le compte de Bilail " + Bilail.getCotisationsAnnuelles());
+		
+			// l'Exercice Budgetaire 
+		//System.out.println(Asso.getBudget().getEBActuel()); // Il faut revoie le EBactuel il y a un pb
+		
+		};
 		
 		
 	}
-}
+

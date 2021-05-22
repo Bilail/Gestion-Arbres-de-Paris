@@ -39,36 +39,48 @@
   <a href="#white_check_mark-requirements">Installation</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Collaborations</a> &#xa0; | &#xa0;
   <a href="#memo-license">Merci</a> &#xa0; | &#xa0;
-  <a href="https://github.com/Bilail" target="_blank">Author</a>
+  <a href="https://github.com/Bilail" target="_blank">Auteur</a>
 </p>
 
 <br>
 
-## :dart: About ##
+## :dart: Description ##
 
-Describe your project
+Le but de ce projet est de créer un site de gestion d'abre à travers une assocaiation.
 
-## :sparkles: Features ##
+*	Gestions des arbres et de leurs caractéristiques
+*	Classement arbre remarquable 
+*	Vote des membres 
+*	Visite des arbres
+*	Compte rendu
+*	Gestion du budget
+*	Subventions
+*	Rapport
+* Dépense
+*	Notification d’événement 
+*	Gestion des membres 
+*	Cotisation
+*	RGPD
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+## Structure ##
 
-## :rocket: Technologies ##
+![Diagramme UML ](./UML.jpg)
 
-The following tools were used in this project:
+## :rocket: Technologie ##
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+Le logiciel est codé entierement en Java
 
-## :white_check_mark: Requirements ##
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+## :checkered_flag: Installation ##
 
-## :checkered_flag: Starting ##
+Pour pouvoir installer ce répertoire
+
+```
+$ git clone https://github.com/Bilail/project-java.git
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
+```
 
 ```bash
 # Clone this project
@@ -86,12 +98,13 @@ $ yarn start
 # The server will initialize in the <http://localhost:3000>
 ```
 
-## :memo: License ##
+## Collaboration ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+Ce projet a été réalisé par : Natanaël et Bilail
 
+Dans le cadre du Projet Java de Polytech Paris Saclay 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/Bilail" target="_blank">Bilail et Natanael</a>
 
 &#xa0;
 

@@ -33,12 +33,13 @@
 <hr> -->
 
 <p align="center">
-  <a href="#dart-about">Description </a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Structure</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Installation</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Collaborations</a> &#xa0; | &#xa0;
+  <a href="#:dart:-Description">Description </a> &#xa0; | &#xa0; 
+  <a href="Structure">Structure</a> &#xa0; | &#xa0;
+  <a href="#:rocket:-Technologie">Technologies</a> &#xa0; | &#xa0;
+  <a href="#:checkered_flag:-Installation">Installation</a> &#xa0; | &#xa0;
+  <a href="#Collaboration">Collaborations</a> &#xa0; | &#xa0;
   <a href="#memo-license">Merci</a> &#xa0; | &#xa0;
+  <a href=[Java-doc](../doc/Index.html)</a> &#xa0; | &#xa0;
   <a href="https://github.com/Bilail" target="_blank">Auteur</a>
 </p>
 

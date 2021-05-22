@@ -25,6 +25,30 @@ public class Association implements Notifiable {
 	}
 	
 	/**
+	 * Permet d'obtenir la liste des membres de l'association
+	 * @return liste membres
+	 */
+	public ArrayList<Membre> getListMembre(){
+		return listeMembres;
+	}
+	
+	/**
+	 * Permet d'obtenir le budget s de l'association
+	 * @return budget
+	 */
+	public Budget getBudget() {
+		return budget;
+	}
+	
+	/**
+	 * Permet d'obtenir la liste des donateurs de l'association
+	 * @return liste donateurs
+	 */
+	public ArrayList<Donateur> getListeDonateurs() {
+		return listeDonateurs;
+	}
+
+	/**
 	 * Méthode permettant de révoquer un membre de l'association
 	 * @param membre
 	 */
@@ -37,7 +61,7 @@ public class Association implements Notifiable {
 	 * Methode permettant l'inscription d'une personne dans l'association
 	 * @param personne la personne à inscrire
 	 */
-	void inscrire(Personne personne) {
+	public void inscrire(Personne personne) {
 		Membre membre = new Membre (personne,this);
 		listeMembres.add(membre);
 	}

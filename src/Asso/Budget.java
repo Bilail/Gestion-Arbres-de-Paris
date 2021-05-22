@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class Budget {
 	
 	private float somme;
-	private ArrayList<ExerciceBudgetaire> exercicesBudgetaires;
+	private ArrayList<ExerciceBudgetaire> listExercicesBudgetaires;
 	
 	/**
 	 * Constructeur de Budget avec un montant initial
 	 * @param le montant initial du budget
 	 */
 	public Budget() {
-		exercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
+		listExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
 		somme=0;
 		//EBactuel=new ExerciceBudgetaire(this);
 	}
@@ -30,7 +30,7 @@ public class Budget {
 	 * @return la liste des exercices budgétaires précédents
 	 */
 	public ArrayList<ExerciceBudgetaire> getExercicesBudgetaires(){
-		return exercicesBudgetaires;
+		return listExercicesBudgetaires;
 	}
 	
 	/**
@@ -38,7 +38,7 @@ public class Budget {
 	 * @return l'exercice budgétaire en cours
 	 */
 	public ExerciceBudgetaire getEBActuel() {
-		return exercicesBudgetaires.get(exercicesBudgetaires.size());
+		return listExercicesBudgetaires.get(listExercicesBudgetaires.size());
 	}
 	
 	/**
@@ -49,10 +49,10 @@ public class Budget {
 	void CalculBudget(Transaction transaction) {
 		
 		somme=somme+transaction.getMontant();
-		getEBActuel().SauvegarderTransaction(transaction, this);
+		//getEBActuel().SauvegarderTransaction(transaction, this);
 	}
 	
 	void changementAnnee() {
-		exercicesBudgetaires.add(new ExerciceBudgetaire(this));
+		listExercicesBudgetaires.add(new ExerciceBudgetaire(this));
 	}
 }

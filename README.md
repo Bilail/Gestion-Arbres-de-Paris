@@ -8,9 +8,7 @@
 4. [Collaboration](#Cllaboration)
 5. [Installation](#Installation)
 
-
-
-##Info generale
+## Info generale
 
 Le but de ce projet est de créer un site de gestion d'abre à travers une assocaiation.
 
@@ -27,22 +25,25 @@ Le but de ce projet est de créer un site de gestion d'abre à travers une assoc
 *	Gestion des membres 
 *	Cotisation
 *	RGPD
-***
 
-##Technologies
+## Technologies
 
 Le logiciel est codé entierement en Java
 
-##Architecture 
+## Architecture 
 
 ![Diagramme UML ](./UML.jpg)
 
 ## Collaboration
 
+Ce projet a été réalisé par : Natanaël et Bilail
+
+Dans le cadre du Projet Java de Polytech Paris Saclay 
+
 ## Installation
 
 ***
-Por pouvoir installer ce répertoire
+Pour pouvoir installer ce répertoire
 
 ```
 $ git clone https://github.com/Bilail/project-java.git

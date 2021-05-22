@@ -30,6 +30,7 @@ Le but de ce projet est de créer un site de gestion d'abre à travers une assoc
 ##Technologies
 
 Le logiciel est codé entierement en Java
+
 ##Architecture 
 
 ![Diagramme UML ](./UML.jpg)

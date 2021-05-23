@@ -13,7 +13,7 @@ public class Arbre {
 	private  Float[] GPS;
 	private boolean remarquable;
 	private Date dateDerniereVisite, dateClassification; 
-	private ArrayList<CompteRendu> listeCR = new ArrayList<CompteRendu>(); //je propose d'appeler la variable plutot Liste_CR comme c plusieurs CR
+	private ArrayList<CompteRendu> listeComptesRendus = new ArrayList<CompteRendu>(); 
 	private int nbNominations;
 	
 	/**
@@ -133,11 +133,6 @@ public class Arbre {
 		return this.dateDerniereVisite;
 	}
 
-	private void setDateDerniereVisite(Date dateDerniereVisite) {
-		this.dateDerniereVisite = dateDerniereVisite;
-	}
-	
-
 	public Date getDateClassification() {
 		return dateClassification;
 	}
@@ -147,7 +142,7 @@ public class Arbre {
 	}
 	
 	public ArrayList<CompteRendu> getListeComptesRendus() {
-		return listeCR;
+		return listeComptesRendus;
 	}
 	
 	public int getNbNominations() {
@@ -161,10 +156,13 @@ public class Arbre {
 	public void resetNominations() {
 		nbNominations = 0;
 	}
-
-	private void setListeComptesRendus(ArrayList<CompteRendu> comptesRendus) {
-
-		listeCR = comptesRendus;
+	
+	/**
+	 * Méthode permettant de visiter un arbre et de modifier sa listeCompteRendus ainsi que sa date de dernière visite
+	 */
+	public void ajouterCompteRendu(CompteRendu compteRendu) {
+		dateDerniereVisite = compteRendu.getDate();
+		getListeComptesRendus().add(compteRendu);
 	}
 
 	/**
@@ -172,7 +170,7 @@ public class Arbre {
 	 */
 	@Override
 	public String toString() {
-		return "genre : " + getGenre() + "\n" +
+		return "\n" + "genre : " + getGenre() + "\n" +
 			   "espece : " + getEspece() + "\n" +
 			   "nom : " + getNom() + "\n" +
 			   "dev : " + getDev() + "\n" +
@@ -183,7 +181,7 @@ public class Arbre {
 			   "caractère remarquable : " + getRemarquable() + "\n" +
 			   "date de dernière vidite : " + dateDerniereVisite + "\n" +
 			   "date de classification : " + dateClassification + "\n" +
-			   "comptes rendus sur l'abres : " + listeCR.toString() + "\n" +
+			   "comptes rendus sur l'abres : " + listeComptesRendus.toString() + "\n" +
 			   "nombre de nominations : " + getNbNominations();
 	}
 	

@@ -13,7 +13,7 @@ public class ExerciceBudgetaire{
 	public ExerciceBudgetaire(Budget budget) {
 		annee= new Date().getYear();
 		historique = new StringBuilder();
-		historique.append( "Budget initial :" + budget.getSomme() + "\n");
+		historique.append( "Budget initial : " + budget.getSomme() + "\n");
 	}
 	
 	/**
@@ -39,8 +39,8 @@ public class ExerciceBudgetaire{
 	 */
 	void SauvegarderTransaction(Transaction transaction, Budget budget) {
 		
-		historique.append(transaction.getDate() + " " + transaction.getDescription() + transaction.getMontant()
-		+ "euros" + " budget : " + budget.getSomme());
+		historique.append(transaction.getDate() + " " + transaction.getDescription() + " " + transaction.getMontant()
+		+ " euros" + " budget : " + budget.getSomme() + "\n");
 		
 	}
 	

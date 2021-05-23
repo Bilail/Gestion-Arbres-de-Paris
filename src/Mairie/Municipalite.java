@@ -24,7 +24,7 @@ public class Municipalite implements Donateur, Notifiable {
 	public void Donation(Association association, float montant) {
 		
 		Transaction transaction = new Transaction(montant, "don de la municipalité");
-		association.EffectuerTransaction(transaction);
+		association.effectuerTransaction(transaction);
 		association.ajouterDonateur((Object) this);
 	}
 	

@@ -11,19 +11,41 @@ public class CompteRendu {
 	private Membre auteur;
 	private Arbre arbre;
 	
-	public CompteRendu(String contenu, Arbre arbre) {
-		date = new Date();
+	public CompteRendu(String contenu, Visite visite) {
+		date = visite.getDate();
 		this.contenu=contenu;
-		this.arbre = arbre;
+		arbre = visite.getArbre();
+		auteur = visite.getMembre();
 	}
 	
+
+	public Date getDate() {
+		return date;
+	}
+
+	
+	public String getContenu() {
+		return contenu;
+	}
+
+
+	public Membre getAuteur() {
+		return auteur;
+	}
+
+
+	public Arbre getArbre() {
+		return arbre;
+	}
+
+
 	/**
 	 * Redéfinition de la méthode toString() dans le cadre d'un CompteRendu
 	 */
 	@Override
 	public String toString() {
-		return "CompteRendu du " + date + "par" + auteur.getPrenom() + " " + auteur.getNom() + " : " + "\n"
-				+ contenu + "arbre : " + arbre;
+		return "CompteRendu du " + getDate() + "par" + getAuteur().getPrenom() + " " + getAuteur().getNom() + " : " + "\n"
+				+ getContenu() + "arbre : " + getArbre();
 	}
 
 }	

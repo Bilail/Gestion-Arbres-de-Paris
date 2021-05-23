@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import Asso.Association;
+import Asso.CompteRendu;
 import Asso.Transaction;
+import Asso.Visite;
 import Mairie.Arbre;
 
 public class Membre extends Personne {
@@ -55,7 +57,7 @@ public class Membre extends Personne {
 	 */
 	public void Cotiser(float somme) {
 		listeCotisationsAnnuelles.add(somme);
-		association.EffectuerTransaction(new Transaction(somme,"cotisation"));
+		association.effectuerTransaction(new Transaction(somme,"cotisation"));
 		;
 	}
 	
@@ -71,12 +73,47 @@ public class Membre extends Personne {
 	/**
 	 * Méthode permettant à un membre de quitter l'association
 	 */
-	private void Quitter() {
+	public void quitter() {
 		association.Revoquer(this);
+	}
+	
+	/**
+	 * Méthode permettant à un membre de plannifier une visite
+	 */
+	public void plannifierVisite(Arbre arbre, Date date) {
+		
+		if(association.getArbresRemarquables().contains(arbre)){
+			
+			boolean dejaPlannifiee=false;
+			
+			for(Visite visite : association.getVisitesPlannifiees()) {
+				
+				if(visite.getArbre()==arbre) {
+					dejaPlannifiee=true;
+				}
+			}
+			
+			if(dejaPlannifiee==false) {
+			association.getVisitesPlannifiees().add(new Visite(arbre, this, date));
+			}
+		}
+	}
+	
+	/**
+	 * Méthode permettant à un membre d'effectuer une visite préalablement plannifiée
+	 * @param visite la visite à effectuer
+	 */
+	public void effectuerVisite(Visite visite, String bilan) {
+		
+		if(association.getVisitesPlannifiees().contains(visite) && visite.getDate().getDay()==new Date().getDay()) {
+			visite.getArbre().ajouterCompteRendu(new CompteRendu(bilan,visite));
+			association.effectuerTransaction(new Transaction(visite.getMontantDefraiement(),"defraiement"));
+			association.getVisitesPlannifiees().remove(visite);
+		}
 	}
 	
 	@Override
 	public String toString() {
-		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + association + " depsuis  " + dateInscription;
+		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + association + " depuis  " + dateInscription;
 	}
 }

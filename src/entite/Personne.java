@@ -71,6 +71,6 @@ public class Personne implements Notifiable,Donateur {
 	public void Donation(Association association, float montant) {
 		
 		Transaction transaction = new Transaction(montant, "don d'un particulier");
-		association.EffectuerTransaction(transaction);
+		association.effectuerTransaction(transaction);
 	}
 }

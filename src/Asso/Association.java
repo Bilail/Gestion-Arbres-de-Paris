@@ -11,17 +11,20 @@ import entite.Personne;
 public class Association implements Notifiable {
 	
 	private ArrayList<Membre> listeMembres;
-	private Budget budget;
 	private ArrayList<Donateur> listeDonateurs;
+	private ArrayList<Visite> visitesPlannifiees;
+	private Budget budget;
 	private Municipalite mairie;
 	
 	/**
 	 * Constructeur par défaut de l'association
 	 */
-	public Association() {
+	public Association(Municipalite mairie) {
 		listeMembres= new ArrayList<Membre>();
 		listeDonateurs=new ArrayList<Donateur>();
+		visitesPlannifiees=new ArrayList<Visite>();
 		budget = new Budget(); 
+		this.mairie=mairie;
 	}
 	
 	/**
@@ -33,11 +36,44 @@ public class Association implements Notifiable {
 	}
 	
 	/**
-	 * Permet d'obtenir le budget s de l'association
+	 * Permet d'obtenir le budget de l'association
 	 * @return budget
 	 */
 	public Budget getBudget() {
 		return budget;
+	}
+	
+	/**
+	 * Méthode d'accès à la mairie à laquelle est associée l'Association
+	 * @return la mairie
+	 */
+	public Municipalite getMairie() {
+		return mairie;
+	}
+	
+	/**
+	 * Méthode d'accès aux visites plannifiées par l'association
+	 * @return la liste des visites plannifiées
+	 */
+	public ArrayList<Visite> getVisitesPlannifiees(){
+		return visitesPlannifiees;
+	}
+	
+	/**
+	 * Méthode permettant à l'association d'énumérer la liste des arbres remarquables
+	 * @return la liste des arbres remarquables
+	 */
+	public ArrayList<Arbre> getArbresRemarquables(){
+		
+		ArrayList<Arbre> ListeArbresRemarquables = new ArrayList<Arbre>();
+		
+		for(Arbre arbre : getMairie().getListArbre()) {
+			
+			if(arbre.getRemarquable()) {
+				ListeArbresRemarquables.add(arbre);
+			}
+		}
+		return ListeArbresRemarquables;
 	}
 	
 	/**
@@ -61,9 +97,10 @@ public class Association implements Notifiable {
 	 * Methode permettant l'inscription d'une personne dans l'association
 	 * @param personne la personne à inscrire
 	 */
-	public void inscrire(Personne personne) {
+	public Membre inscrire(Personne personne) {
 		Membre membre = new Membre (personne,this);
 		listeMembres.add(membre);
+		return membre;
 	}
 	
 	/**
@@ -88,7 +125,7 @@ public class Association implements Notifiable {
 	 * Methode permettant de mettre a jour le budget de l'association suite à une transaction
 	 * @param transaction la transaction effectuée
 	 */
-	public void EffectuerTransaction(Transaction transaction) {
+	public void effectuerTransaction(Transaction transaction) {
 		budget.CalculBudget(transaction);
 	}
 	
@@ -106,7 +143,7 @@ public class Association implements Notifiable {
 	 * @param mairie la Municipalite qui tient la liste d'arbres
 	 * @return les arbres nominés par l'association
 	 */
-	public ArrayList<Arbre> nominer(Municipalite mairie) {
+	public ArrayList<Arbre> nominer() {
 		
 		ArrayList<Arbre> nominations= new ArrayList<Arbre>();
 		
@@ -119,7 +156,7 @@ public class Association implements Notifiable {
 		for(int j=0; j<5; j++) {
 			
 			
-			for(Arbre arbre : mairie.getListArbre()) {
+			for(Arbre arbre : getMairie().getListArbre()) {
 				if(nominations.get(j)==null) {
 					nominations.add(j,arbre);
 				}
@@ -145,8 +182,8 @@ public class Association implements Notifiable {
 	}
 	
 	private void finExerciceBudgetaire() {
-		budget.changementAnnee();
-		nominer(mairie);
+		budget.nouvelleAnnee();
+		nominer();
 		
 	}
 	
@@ -158,13 +195,7 @@ public class Association implements Notifiable {
 	
 	public static void main(String[] args) {
 		
-		Association A = new Association();
 		
-		Personne p= new Personne("Jean", "Dupont","8 rue Balzac","03/06/1985");
-		
-		A.inscrire(p);
-		
-		System.out.println(A.listeMembres.get(0).getDateInscription());
 	}
 
 	

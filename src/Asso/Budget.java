@@ -13,7 +13,7 @@ public class Budget {
 	public Budget() {
 		listExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
 		somme=0;
-		//EBactuel=new ExerciceBudgetaire(this);
+		nouvelleAnnee();
 	}
 	
 	
@@ -38,7 +38,7 @@ public class Budget {
 	 * @return l'exercice budgétaire en cours
 	 */
 	public ExerciceBudgetaire getEBActuel() {
-		return listExercicesBudgetaires.get(listExercicesBudgetaires.size());
+		return getExercicesBudgetaires().get(getExercicesBudgetaires().size()-1);
 	}
 	
 	/**
@@ -49,10 +49,10 @@ public class Budget {
 	void CalculBudget(Transaction transaction) {
 		
 		somme=somme+transaction.getMontant();
-		//getEBActuel().SauvegarderTransaction(transaction, this);
+		getEBActuel().SauvegarderTransaction(transaction, this);
 	}
 	
-	void changementAnnee() {
+	void nouvelleAnnee() {
 		listExercicesBudgetaires.add(new ExerciceBudgetaire(this));
 	}
 }

@@ -10,7 +10,7 @@ public class Visite {
 	private Date date;
 	private Arbre arbre;
 	private Membre membre;
-	private static int montantDefraiement=20;
+	private static int montantDefraiement= -20;
 	
 	
 	public Visite(Arbre arbre, Membre membre, Date date) {
@@ -37,8 +37,8 @@ public class Visite {
 	
 	@Override
 	public String toString() {
-		return "visite de larbre : " + getArbre() + "\n " + 
-				"prévue le : " + getDate() + "par : " + getMembre();
+		return "\n" + "visite de larbre : " + getArbre() + "\n " + 
+				"prévue le : " + getDate() + " par : " + getMembre().getPrenom() + " " + getMembre().getNom();
 	}
 	
 

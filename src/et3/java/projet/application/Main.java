@@ -66,12 +66,7 @@ public class Main
 		System.out.println("Après inscription : ");
 		System.out.println(asso.getListMembre());
 		
-		//Visites
 		
-		Arbre arbre= asso.getArbresRemarquables().get(1);
-		m2.plannifierVisite(arbre, new Date());
-		System.out.println(asso.getVisitesPlannifiees());
-		//m2.effectuerVisite(null, null) // faut que je termine de tester les visites j'ai encore 2/3 modifs à faire
 		
 		// Partie Finance 
 		System.out.println("\n------Finance------\nle budget de l'asso est de : " + asso.getBudget().getSomme()); // On commence avec un budget de 0
@@ -79,9 +74,23 @@ public class Main
 		m1.Cotiser(10);
 		System.out.println("\nBilail cotise, le budget de l'asso est de : " + asso.getBudget().getSomme());
 		System.out.println("\nsur le compte de Bilail " + m1.getCotisationsAnnuelles()); // j'aurais plutot di "Cotisation de Bilail:"
+		// l'Exercice Budgetaire 
+		System.out.println(asso.getBudget().getEBActuel());
 		
-			// l'Exercice Budgetaire 
-		System.out.println(asso.getBudget().getEBActuel()); 
+		//Visites
+		System.out.println("\n------Visites------\n");
+		Arbre arbre= asso.getArbresRemarquables().get(1);
+		m2.plannifierVisite(arbre, new Date());
+		m1.plannifierVisite(arbre, new Date());
+		System.out.println(asso.getVisitesPlannifiees());
+		m2.effectuerVisite(m2.getProchaineVisite(), "joli poti arbre");
+		m2.nominer(arbre);
+		m1.plannifierVisite(arbre, new Date());
+		System.out.println(asso.getVisitesPlannifiees());
+		
+		
+		
+		 
 		};
 		
 		

@@ -145,14 +145,31 @@ public class Arbre {
 		return listeComptesRendus;
 	}
 	
+	/**
+	 * méthode d'accès au nombres de nominations d'un arbre
+	 * @return nbNominations le nombre de nominations d'un arbre
+	 */
 	public int getNbNominations() {
 		return nbNominations;
 	}
 	
+	/**
+	 * méthode pour nominer un arbre
+	 */
 	public void nominer() {
 		nbNominations = nbNominations+1;
 	}
 	
+	/**
+	 * Méthode pour "dé-nominer" un arbre
+	 */
+	public void denominer() {
+		nbNominations = nbNominations-1;
+	}
+	
+	/**
+	 * Méthode pour réinitialiser ne nombre de nominations d'un arbre
+	 */
 	public void resetNominations() {
 		nbNominations = 0;
 	}
@@ -181,7 +198,7 @@ public class Arbre {
 			   "caractère remarquable : " + getRemarquable() + "\n" +
 			   "date de dernière vidite : " + dateDerniereVisite + "\n" +
 			   "date de classification : " + dateClassification + "\n" +
-			   "comptes rendus sur l'abres : " + listeComptesRendus.toString() + "\n" +
+			   "comptes rendus sur l'arbres : " + listeComptesRendus + "\n" +
 			   "nombre de nominations : " + getNbNominations();
 	}
 	

@@ -139,7 +139,8 @@ public class Association implements Notifiable {
 	/**
 	 * Méthode permettant de transmettre à la mairie la liste des arbres qu'elle nomine pour être classifiés
 	 * comme remarquables. Liste contenant les 5 arbres les plus nominés par les membres de l'association.
-	 * En cas d'égalité, on procède par circonférence et hauteur croissante.
+	 * En cas d'égalité, on procède par circonférence et hauteur croissante. On réinitialise également les nominations
+	 * de chaque membre ainsi que le compteur de nominations pour chaque arbre.
 	 * @param mairie la Municipalite qui tient la liste d'arbres
 	 * @return les arbres nominés par l'association
 	 */
@@ -149,7 +150,7 @@ public class Association implements Notifiable {
 		
 		for(Membre membre : listeMembres) {
 			for(int i=0 ; i<membre.getNominations().size(); i++) {
-			membre.getNominations().get(i).nominer();
+			membre.getNominations().get(i).denominer();
 			}
 		}
 		
@@ -177,6 +178,10 @@ public class Association implements Notifiable {
 				}
 			}
 			nominations.get(j).resetNominations();
+		}
+		
+		for(Arbre arbre : mairie.getListArbre()) {
+			arbre.denominer();
 		}
 		return nominations;
 	}

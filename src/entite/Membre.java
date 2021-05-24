@@ -14,6 +14,7 @@ public class Membre extends Personne {
 	private Association association;
 	private ArrayList<Arbre> nominations;
 	private ArrayList<Float> listeCotisationsAnnuelles;
+	private Visite prochaineVisite;
 	
 	/**
 	 * Constructeur d'un membre de l'association à partir d'une personne
@@ -25,6 +26,7 @@ public class Membre extends Personne {
 		super(p.getNom(), p.getPrenom(),p.getAdresse(),p.getDateNaissance());
 		this.association=association;
 		this.dateInscription=new Date();
+		nominations = new ArrayList<Arbre>();
 		listeCotisationsAnnuelles = new ArrayList<Float>();
 	}
 	
@@ -45,10 +47,20 @@ public class Membre extends Personne {
 	}
 	
 	/**
-	 * 
+	 * Méthode d'accès aux nominations d'arbres d'un Membre
+	 * @return nominations la liste des nominations
 	 */
 	public ArrayList<Arbre> getNominations(){
 		return nominations;
+	}
+	
+	/**
+	 * Méthode d'accès à la prochaine visite d'un Membre
+	 * (on suppose qu'un Membre ne peut plannifier qu'une visite à la fois)
+	 * @return prochaineVisite la prochaine visite
+	 */
+	public Visite getProchaineVisite() {
+		return prochaineVisite;
 	}
 	
 	/**
@@ -64,9 +76,10 @@ public class Membre extends Personne {
 	public void nominer(Arbre arbre) {
 		
 		if(nominations.size()==5) {
+			nominations.get(0).denominer();
 			nominations.remove(0);
 		}
-		
+		arbre.nominer();
 		nominations.add(arbre);
 	}
 
@@ -94,7 +107,13 @@ public class Membre extends Personne {
 			}
 			
 			if(dejaPlannifiee==false) {
-			association.getVisitesPlannifiees().add(new Visite(arbre, this, date));
+				
+			prochaineVisite =new Visite(arbre, this, date);
+			association.getVisitesPlannifiees().add(prochaineVisite);
+			
+			}
+			else {
+				System.out.println("\n" + "visite déjà plannifiée sur cet arbre");
 			}
 		}
 	}

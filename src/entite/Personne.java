@@ -10,6 +10,7 @@ public class Personne implements Notifiable,Donateur {
 	private String prenom;
 	private String DateNaissance; // je propose le type date directement 
 	private String adresse;
+	private CompteBancaire compte;
 	
 	/**
 	 * Constructeur de Personne prenant en compte les propriétés d'une Personne
@@ -66,8 +67,9 @@ public class Personne implements Notifiable,Donateur {
 	
 	
 	/**
-	 * Méthode permettant à une personne d'effectuer un don à une association
+	 * Méthode permettant d'effectuer un don de particulier à association
 	 */
+	@Override
 	public void Donation(Association association, float montant) {
 		
 		Transaction transaction = new Transaction(montant, "don d'un particulier");

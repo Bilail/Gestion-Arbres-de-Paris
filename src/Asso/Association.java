@@ -31,7 +31,7 @@ public class Association implements Notifiable {
 	 * Permet d'obtenir la liste des membres de l'association
 	 * @return liste membres
 	 */
-	public ArrayList<Membre> getListMembre(){
+	public ArrayList<Membre> getListeMembres(){
 		return listeMembres;
 	}
 	
@@ -85,10 +85,10 @@ public class Association implements Notifiable {
 	}
 
 	/**
-	 * Méthode permettant de révoquer un membre de l'association
+	 * Méthode permettant de révoquer un membre de l'association si celui-ci n'a pas reglé sa cotisation
 	 * @param membre
 	 */
-	public void Revoquer(Membre membre) {
+	public void revoquer(Membre membre) {
 		listeMembres.remove(membre);
 		membre=null;	
 	}
@@ -122,11 +122,20 @@ public class Association implements Notifiable {
 	}
 	
 	/**
-	 * Methode permettant de mettre a jour le budget de l'association suite à une transaction
+	 * Methode permettant de mettre a jour le budget de l'association suite à une transaction,
+	 * si la transaction correspond à une facture, on vérifie d'abord que la somme à payer est disponible
 	 * @param transaction la transaction effectuée
 	 */
 	public void effectuerTransaction(Transaction transaction) {
+		
+		if(transaction instanceof Facture) {
+			if(getBudget().getSomme()>=transaction.getMontant()) {
+				budget.CalculBudget(transaction);
+			}
+		}
+		else {
 		budget.CalculBudget(transaction);
+		}
 	}
 	
 	/**
@@ -148,31 +157,36 @@ public class Association implements Notifiable {
 		
 		ArrayList<Arbre> nominations= new ArrayList<Arbre>();
 		
+		for(int i=0; i<5; i++) {
+			nominations.add(null);
+		}
+		
 		for(Membre membre : listeMembres) {
 			for(int i=0 ; i<membre.getNominations().size(); i++) {
-			membre.getNominations().get(i).denominer();
+			membre.getNominations().remove(i);
 			}
 		}
 		
-		for(int j=0; j<5; j++) {
+		for(int j=0; j<nominations.size(); j++) {
 			
 			
 			for(Arbre arbre : getMairie().getListArbre()) {
 				if(nominations.get(j)==null) {
-					nominations.add(j,arbre);
+					//System.out.println("nominations : "+nominations);
+					nominations.set(j, arbre);
 				}
 				else if(arbre.getNbNominations()>nominations.get(j).getNbNominations()){
-					nominations.add(j,arbre);
+					nominations.set(j, arbre);
 				}
 				else if(arbre.getNbNominations()==nominations.get(j).getNbNominations()){
 					
-					 if(arbre.getCirconference()>nominations.get(j).getNbNominations()) {
-						 nominations.add(j,arbre);
+					 if(arbre.getCirconference()>nominations.get(j).getCirconference()) {
+						 nominations.set(j, arbre);
 					 }
-					 else if(arbre.getCirconference()==nominations.get(j).getNbNominations()) {
+					 else if(arbre.getCirconference()==nominations.get(j).getCirconference()) {
 						 
 						  if(arbre.getHauteur()>nominations.get(j).getHauteur()) {
-							 nominations.add(j,arbre);
+							  nominations.set(j, arbre);
 						  }
 					 }
 				}
@@ -181,12 +195,22 @@ public class Association implements Notifiable {
 		}
 		
 		for(Arbre arbre : mairie.getListArbre()) {
-			arbre.denominer();
+			arbre.resetNominations();
 		}
 		return nominations;
 	}
 	
-	private void finExerciceBudgetaire() {
+	public void finExerciceBudgetaire() {
+		
+		for(Membre membre : getListeMembres()) {
+			if(membre.getCotisationsAnnuelles().get(membre.getCotisationsAnnuelles().size()-1)==0) {
+				revoquer(membre);
+			}
+			else {
+				membre.getCotisationsAnnuelles().add((float) 0);
+			}
+		}
+		
 		budget.nouvelleAnnee();
 		nominer();
 		
@@ -202,8 +226,6 @@ public class Association implements Notifiable {
 		
 		
 	}
-
-	
 	
 
 }

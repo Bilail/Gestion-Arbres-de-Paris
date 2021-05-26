@@ -15,6 +15,7 @@ public class Membre extends Personne {
 	private ArrayList<Arbre> nominations;
 	private ArrayList<Float> listeCotisationsAnnuelles;
 	private Visite prochaineVisite;
+	private static Float montantCotisation = (float) 30.0;
 	
 	/**
 	 * Constructeur d'un membre de l'association à partir d'une personne
@@ -28,6 +29,7 @@ public class Membre extends Personne {
 		this.dateInscription=new Date();
 		nominations = new ArrayList<Arbre>();
 		listeCotisationsAnnuelles = new ArrayList<Float>();
+		listeCotisationsAnnuelles.add((float) 0);
 	}
 	
 	/**
@@ -64,13 +66,18 @@ public class Membre extends Personne {
 	}
 	
 	/**
-	 * Méthode permettant à un membre de cotiser pour l'association
-	 * @param somme le montant de la cotisation
+	 * Méthode permettant à un membre de cotiser une seule fois par an pour l'association
 	 */
-	public void Cotiser(float somme) {
-		listeCotisationsAnnuelles.add(somme);
-		association.effectuerTransaction(new Transaction(somme,"cotisation"));
-		;
+	public void Cotiser() {
+		if(getCotisationsAnnuelles().get(getCotisationsAnnuelles().size()-1)==0) {
+			
+		listeCotisationsAnnuelles.set(getCotisationsAnnuelles().size()-1, montantCotisation);
+		association.effectuerTransaction(new Transaction(montantCotisation,"cotisation"));
+		
+		}
+		else {
+			System.out.println("\n"+"cotisation annuelle déja effectuée");
+		}
 	}
 	
 	public void nominer(Arbre arbre) {
@@ -87,7 +94,7 @@ public class Membre extends Personne {
 	 * Méthode permettant à un membre de quitter l'association
 	 */
 	public void quitter() {
-		association.Revoquer(this);
+		association.revoquer(this);
 	}
 	
 	/**

@@ -44,7 +44,7 @@ public class CompteRendu {
 	 */
 	@Override
 	public String toString() {
-		return "CompteRendu du " + getDate() + "par" + getAuteur().getPrenom() + " " + getAuteur().getNom() + " : " + "\n"
+		return "CompteRendu du " + getDate() + " par " + getAuteur().getPrenom() + " " + getAuteur().getNom() + " : " + "\n"
 				+ getContenu();
 	}
 

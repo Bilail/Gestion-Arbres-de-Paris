@@ -24,7 +24,7 @@ public class Membre extends Personne {
 	 * @param association l'association dont fait partie le membre
 	 */
 	public Membre(Personne p, Association association){
-		super(p.getNom(), p.getPrenom(),p.getAdresse(),p.getDateNaissance());
+		super(p.getNom(), p.getPrenom(),p.getAdresse(),p.getDateNaissance(),p.getCompte().getSolde());
 		this.association=association;
 		this.dateInscription=new Date();
 		nominations = new ArrayList<Arbre>();
@@ -134,12 +134,13 @@ public class Membre extends Personne {
 		if(association.getVisitesPlannifiees().contains(visite) && visite.getDate().getDay()==new Date().getDay()) {
 			visite.getArbre().ajouterCompteRendu(new CompteRendu(bilan,visite));
 			association.effectuerTransaction(new Transaction(visite.getMontantDefraiement(),"defraiement"));
+			getCompte().calculSolde(visite.getMontantDefraiement());
 			association.getVisitesPlannifiees().remove(visite);
 		}
 	}
 	
 	@Override
 	public String toString() {
-		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + association + " depuis  " + dateInscription;
+		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + " depuis  " + dateInscription;
 	}
 }

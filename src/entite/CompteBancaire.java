@@ -7,16 +7,20 @@ import Asso.Transaction;
 public class CompteBancaire {
 	
 	private String propriétaire;
-	private Double solde;
+	private float solde;
 	private Date date;
 	
-	public CompteBancaire(String propriétaire, Double solde) {
+	public CompteBancaire(String propriétaire, float solde) {
 		this.propriétaire=propriétaire;
 		this.solde=solde;
 		date=new Date();
 	}
 	
-	void CalculSolde(Transaction transaction) {
-		solde=solde + transaction.getMontant();
+	public float getSolde() {
+		return solde;
+	}
+	
+	void calculSolde(float montant) {
+		solde=solde + montant;
 	}
 }

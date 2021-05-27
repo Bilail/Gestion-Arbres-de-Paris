@@ -46,7 +46,7 @@ public class ExerciceBudgetaire{
 	
 	@Override
 	public String toString() {
-		return "Exercice budgétaire de l'année : " + getAnnee() + "\n" +
+		return "\n" + "Exercice budgétaire de l'année : " + getAnnee() + "\n" +
 				getHistorique().toString();
 	}
 	

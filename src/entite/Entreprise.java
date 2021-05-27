@@ -8,11 +8,16 @@ public class Entreprise implements Donateur {
 	private String nom;
 	private CompteBancaire compte;
 	
-
+	public Entreprise(String nom, float montant) {
+		this.nom=nom;
+		compte=new CompteBancaire("nom",montant);
+	}
+	
 	@Override
 	public void Donation(Association association, float montant) {
 		Transaction transaction = new Transaction(montant, "don d'une entreprise");
 		association.effectuerTransaction(transaction);
+		compte.calculSolde(-(montant));
 	}
 	
 }

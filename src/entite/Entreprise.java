@@ -13,6 +13,14 @@ public class Entreprise implements Donateur {
 		compte=new CompteBancaire("nom",montant);
 	}
 	
+	public CompteBancaire getCompte() {
+		return compte;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
 	@Override
 	public void Donation(Association association, float montant) {
 		Transaction transaction = new Transaction(montant, "don d'une entreprise");

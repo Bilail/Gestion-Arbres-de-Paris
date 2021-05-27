@@ -6,16 +6,26 @@ public class ExerciceBudgetaire{
 	private int annee = 2021;
 	private StringBuilder historique;
 	
+	
+	
+	/**
+	 * Constructeur par défaut 
+	 * @param budget le budget actuel
+	 */
+	public ExerciceBudgetaire(Budget budget) {
+		
+		historique = new StringBuilder();
+		historique.append( "Budget initial : " + budget.getSomme() + "\n");
+	}
 	/**
 	 * Constructeur d'un exercice budgétaire avec l'état actuel du budget
 	 * @param budget le budget actuel
 	 */
 	public ExerciceBudgetaire(Budget budget, int annee) {
-		//annee= new Date().getYear();
+		this(budget);
 		this.annee = annee;
-		historique = new StringBuilder();
-		historique.append( "Budget initial : " + budget.getSomme() + "\n");
 	}
+
 	
 	/**
 	 * Methode d'accès à l'année de l'ExerciceBudgetaire

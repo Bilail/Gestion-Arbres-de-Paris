@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Budget {
 	
 	private float somme;
-	private int annee = 2020;
+
 	private ArrayList<ExerciceBudgetaire> listExercicesBudgetaires;
 	
 	/**
@@ -14,7 +14,7 @@ public class Budget {
 	public Budget() {
 		listExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();
 		somme=0;
-		nouvelleAnnee();
+		listExercicesBudgetaires.add(new ExerciceBudgetaire(this));
 	}
 	
 	
@@ -54,7 +54,6 @@ public class Budget {
 	}
 	
 	void nouvelleAnnee() {
-		annee = annee +1;
-		listExercicesBudgetaires.add(new ExerciceBudgetaire(this,annee));
+		listExercicesBudgetaires.add(new ExerciceBudgetaire(this,getEBActuel().getAnnee()+1));
 	}
 }

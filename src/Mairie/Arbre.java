@@ -199,7 +199,7 @@ public class Arbre {
 			   "\tdate de dernière vidite : " + dateDerniereVisite + "\n" +
 			   "\tdate de classification : " + dateClassification + "\n" +
 			   "\tcomptes rendus sur l'arbres : " + listeComptesRendus + "\n" +
-			   "\tnombre de nominations : " + getNbNominations();
+			   "\tnombre de nominations : " + getNbNominations() +"\n";
 	}
 	
 	

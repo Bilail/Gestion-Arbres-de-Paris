@@ -67,8 +67,9 @@ public class Personne implements Notifiable,Donateur {
 	/**
 	 * méthode notifiant une personne d'une action ayant eue lieu sur un arbre
 	 */
+	@Override
 	public void notifier(Notification notification){
-		notification.toString();
+		System.out.println(notification);
 	}
 	
 	/**

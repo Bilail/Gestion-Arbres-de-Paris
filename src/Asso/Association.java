@@ -131,7 +131,7 @@ public class Association implements Notifiable {
 	public void effectuerTransaction(Transaction transaction) {
 		
 		if(transaction instanceof Facture) {
-			if(getBudget().getSomme()>=transaction.getMontant()) {
+			if(getBudget().getSomme()>=-transaction.getMontant()) {
 				budget.CalculBudget(transaction);
 			}
 		}
@@ -143,9 +143,10 @@ public class Association implements Notifiable {
 	/**
 	 * méthode notifiant l'association d'une action ayant eue lieu sur un arbre
 	 */
+	@Override
 	public void notifier(Notification notification) {
-		notification.toString();
-	}
+		System.out.println(notification + "\n");
+		}
 	
 	/**
 	 * Méthode permettant de transmettre à la mairie la liste des arbres qu'elle nomine pour être classifiés
@@ -163,7 +164,7 @@ public class Association implements Notifiable {
 			nominations.add(null);
 		}*/
 		
-		Arbre[] nominations=new Arbre[10];
+		Arbre[] nominations=new Arbre[5];
 		
 		for(Membre membre : listeMembres) {
 			for(int i=0 ; i<membre.getNominations().size(); i++) {
@@ -203,7 +204,7 @@ public class Association implements Notifiable {
 		return nominations;
 	}
 	
-	public void finExerciceBudgetaire() {
+	public Arbre[] finExerciceBudgetaire() {
 		
 		ArrayList<Membre> aRevoquer = new ArrayList<Membre>();
 		
@@ -221,7 +222,7 @@ public class Association implements Notifiable {
 		}
 		
 		budget.nouvelleAnnee();
-		nominer();
+		return nominer();
 		
 	}
 	

@@ -23,7 +23,7 @@ public class Notification {
 	 */
 	@Override
 	public String toString() {
-		return description + "le : " + DateNotification +" de l'arbre : ";
+		return description + " le : " + DateNotification +" de l'arbre : ";
 	}
 	
 	

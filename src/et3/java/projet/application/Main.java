@@ -7,10 +7,12 @@ import java.util.Date;
 
 import Mairie.Arbre;
 import Mairie.Municipalite;
+import Mairie.ServiceEspacesVerts;
+import entite.Entreprise;
 import entite.Membre;
 import entite.Personne;
 import Asso.Association;
-
+import Asso.Facture;
 import et3.java.projet.data.FileReader;
 import et3.java.projet.data.*;
 
@@ -51,7 +53,10 @@ public class Main
 		Municipalite mairie = new Municipalite();
 		mairie.setListeArbres(listeArbres);
 		Association asso = new Association(mairie);
-		
+		ServiceEspacesVerts EV = new ServiceEspacesVerts(mairie);
+		EV.ajoutNotifiable(asso);
+
+	
 		// Création des personnes et des membres  
 		Personne p1 = new Personne("BENYAHIA","Bilail","Villepinte","14/07/2000", 440); 
 		System.out.println(p1);	                                                                  																						  
@@ -85,7 +90,18 @@ public class Main
 		System.out.println("\n Cotisations de " + m2.getNom() + " : " + m2.getCotisationsAnnuelles()); 
 		System.out.println("\n Cotisations de " + m3.getNom() + " : " + m3.getCotisationsAnnuelles()); 
 		
-		// Ajouter entrepise don
+		
+		
+		Facture f = new Facture(-50,"electrcite"); // Les factures sont des crédits, ils ont donc un montant négatif
+		asso.effectuerTransaction(f);
+		
+		Facture l = new Facture(-250,"loyer"); // Le montant < au budget l'asso ne peut pas payer la facture
+		asso.effectuerTransaction(l);
+		
+		Entreprise SKM = new Entreprise("SKM", 1000000);
+		System.out.println("\n Test entreprise : --------\nsolde avant don : " + SKM.getNom()+ " : " + SKM.getCompte().getSolde());
+		SKM.Donation(asso, 100);
+		System.out.println("\solde après don : " + SKM.getNom()+ " : " + SKM.getCompte().getSolde());
 		
 		
 		//Visites
@@ -95,19 +111,61 @@ public class Main
 		m1.plannifierVisite(arbre, new Date()); //pas pris en compte car rentre en conflit avec la vidite de m2
 		System.out.println(asso.getVisitesPlannifiees());
 		m2.effectuerVisite(m2.getProchaineVisite(), "joli petit arbre");
-		m2.nominer(arbre);
+		m2.nominer(arbre); // pas pris en compte car arbre déja nominé
 		m1.plannifierVisite(arbre, new Date());
 		System.out.println(asso.getVisitesPlannifiees());
 
+		//Les nominations 
+		
+		System.out.println("\n-------- Les Nominations --------");
+		Arbre a1 = mairie.getListArbre().get(1);
+		Arbre a2 = mairie.getListArbre().get(2);
+		Arbre a3 = mairie.getListArbre().get(3);
+		Arbre a4 = mairie.getListArbre().get(4);
+		Arbre a5 = mairie.getListArbre().get(5);
+		Arbre a6 = mairie.getListArbre().get(6);
 				
+		m1.nominer(a1); m1.nominer(a2); m1.nominer(a3) ; m1.nominer(a4); m1.nominer(a6);
+		//System.out.println(m1.getPrenom() + " a nominé : " + m1.getNominations());
+		m2.nominer(a2); m2.nominer(a3); m2.nominer(a5); 
+		System.out.println(m1.getPrenom() + " a nominé : " + m1.getNominations());
+		m3.nominer(a1); m3.nominer(a2); m3.nominer(a3); m3.nominer(a4); m3.nominer(a4);m3.nominer(a6); // Il nomine 6 arbres donc a1 est ignoré 
+		System.out.println(m3.getPrenom() + " a nominé : " + m3.getNominations()); // de plus si une personne nomine 2 fois un même arbre, ce n'est pris en compte qu'une seule foi 
+		
+		/* NBr de nomination par arbres
+		 * a1: 2 
+		 * a2: 3
+		 * a3: 3
+		 * a4: 2
+		 * a5: 1 
+		 * a6: 2
+		 * En cas d'égalité les arbres sont trié par ordre décroissant de circonférence
+		 */ 
+		
+		//Abattage 
+		Arbre a7 = mairie.getListArbre().get(7);
+		System.out.println("----- Les abattages -----\n avant :" + mairie.getListArbre().get(7));
+		
+		EV.Abattre(a7);
+		System.out.println("\napres : " + mairie.getListArbre().get(7) ); // l'arbre a bien été supprimé et remplacé
+		
+		
+		
 		// l'Exercice Budgetaire 
 		System.out.println(asso.getBudget().getEBActuel());
 		
-		asso.finExerciceBudgetaire(); 
-		System.out.println(asso.getListeMembres());
+		System.out.println("les arbres nominé sont : ");
+		for (Arbre a : asso.finExerciceBudgetaire()) {
+			System.out.println(a);
+		}
+		System.out.println(asso.getListeMembres()); // les membres qui n'ont pas cotisé ont été radié
 		System.out.println(asso.getBudget().getEBActuel());
-		System.out.println(m1);
+		System.out.println(asso.getListeMembres().contains(m4)); // sa retourne false elle a bien été radié
 		 
+		
+	
+		
+		
 		};
 		
 		

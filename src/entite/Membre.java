@@ -82,12 +82,15 @@ public class Membre extends Personne {
 	
 	public void nominer(Arbre arbre) {
 		
-		if(nominations.size()==5) {
-			nominations.get(0).denominer();
-			nominations.remove(0);
-		}
+		
+		if(arbre.getRemarquable() == false) {
+			if(nominations.size()==5) {
+				nominations.get(0).denominer();
+				nominations.remove(0);
+			} 
 		arbre.nominer();
 		nominations.add(arbre);
+		}
 	}
 
 	/**

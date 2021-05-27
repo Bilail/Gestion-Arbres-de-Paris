@@ -3,15 +3,16 @@ import java.util.Date;
 
 public class ExerciceBudgetaire{
 	
-	private int annee;
+	private int annee = 2021;
 	private StringBuilder historique;
 	
 	/**
 	 * Constructeur d'un exercice budgétaire avec l'état actuel du budget
 	 * @param budget le budget actuel
 	 */
-	public ExerciceBudgetaire(Budget budget) {
-		annee= new Date().getYear();
+	public ExerciceBudgetaire(Budget budget, int annee) {
+		//annee= new Date().getYear();
+		this.annee = annee;
 		historique = new StringBuilder();
 		historique.append( "Budget initial : " + budget.getSomme() + "\n");
 	}

@@ -81,4 +81,9 @@ public class Personne implements Notifiable,Donateur {
 		association.effectuerTransaction(transaction);
 		compte.calculSolde(-(montant));
 	}
+	
+	@Override
+	public String toString() {
+		return "\n Nom : " + getNom() + " prénom : " + getPrenom();
+	}
 }

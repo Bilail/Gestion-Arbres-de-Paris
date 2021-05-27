@@ -187,19 +187,19 @@ public class Arbre {
 	 */
 	@Override
 	public String toString() {
-		return "\n" + "genre : " + getGenre() + "\n" +
-			   "espece : " + getEspece() + "\n" +
-			   "nom : " + getNom() + "\n" +
-			   "dev : " + getDev() + "\n" +
-			   "adresse : " + getAdresse() + "\n" +
-			   "circonference : " + getCirconference() + "\n" +
-			   "hauteur : " + getHauteur() + "\n" +
-			   "coordonnées GPS : " + "(" + GPS[0] + "," + GPS[1] + ")" + "\n" +
-			   "caractère remarquable : " + getRemarquable() + "\n" +
-			   "date de dernière vidite : " + dateDerniereVisite + "\n" +
-			   "date de classification : " + dateClassification + "\n" +
-			   "comptes rendus sur l'arbres : " + listeComptesRendus + "\n" +
-			   "nombre de nominations : " + getNbNominations();
+		return "\n" + "\tgenre : " + getGenre() + "\n" +
+			   "\tespece : " + getEspece() + "\n" +
+			   "\tnom : " + getNom() + "\n" +
+			   "\tdev : " + getDev() + "\n" +
+			   "\tadresse : " + getAdresse() + "\n" +
+			   "\tcirconference : " + getCirconference() + "\n" +
+			   "\thauteur : " + getHauteur() + "\n" +
+			   "\tcoordonnées GPS : " + "(" + GPS[0] + "," + GPS[1] + ")" + "\n" +
+			   "\tcaractère remarquable : " + getRemarquable() + "\n" +
+			   "\tdate de dernière vidite : " + dateDerniereVisite + "\n" +
+			   "\tdate de classification : " + dateClassification + "\n" +
+			   "\tcomptes rendus sur l'arbres : " + listeComptesRendus + "\n" +
+			   "\tnombre de nominations : " + getNbNominations();
 	}
 	
 	

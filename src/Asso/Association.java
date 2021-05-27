@@ -1,5 +1,7 @@
 package Asso;
 
+
+
 import java.util.ArrayList;
 
 import Mairie.Arbre;
@@ -153,13 +155,15 @@ public class Association implements Notifiable {
 	 * @param mairie la Municipalite qui tient la liste d'arbres
 	 * @return les arbres nominés par l'association
 	 */
-	public ArrayList<Arbre> nominer() {
+	public Arbre[] nominer() {
 		
-		ArrayList<Arbre> nominations= new ArrayList<Arbre>();
+		/*ArrayList<Arbre> nominations= new ArrayList<Arbre>();
 		
 		for(int i=0; i<5; i++) {
 			nominations.add(null);
-		}
+		}*/
+		
+		Arbre[] nominations=new Arbre[10];
 		
 		for(Membre membre : listeMembres) {
 			for(int i=0 ; i<membre.getNominations().size(); i++) {
@@ -167,31 +171,30 @@ public class Association implements Notifiable {
 			}
 		}
 		
-		for(int j=0; j<nominations.size(); j++) {
+		for(int j=0; j<nominations.length; j++) {
 			
 			
 			for(Arbre arbre : getMairie().getListArbre()) {
-				if(nominations.get(j)==null) {
-					//System.out.println("nominations : "+nominations);
-					nominations.set(j, arbre);
+				if(nominations[j]==null) {
+					nominations[j]=arbre;
 				}
-				else if(arbre.getNbNominations()>nominations.get(j).getNbNominations()){
-					nominations.set(j, arbre);
+				else if(arbre.getNbNominations()>nominations[j].getNbNominations()){
+					nominations[j]=arbre;
 				}
-				else if(arbre.getNbNominations()==nominations.get(j).getNbNominations()){
+				else if(arbre.getNbNominations()==nominations[j].getNbNominations()){
 					
-					 if(arbre.getCirconference()>nominations.get(j).getCirconference()) {
-						 nominations.set(j, arbre);
+					 if(arbre.getCirconference()>nominations[j].getCirconference()) {
+						 nominations[j]=arbre;
 					 }
-					 else if(arbre.getCirconference()==nominations.get(j).getCirconference()) {
+					 else if(arbre.getCirconference()==nominations[j].getCirconference()) {
 						 
-						  if(arbre.getHauteur()>nominations.get(j).getHauteur()) {
-							  nominations.set(j, arbre);
+						  if(arbre.getHauteur()>nominations[j].getHauteur()) {
+							  nominations[j]=arbre;
 						  }
 					 }
 				}
 			}
-			nominations.get(j).resetNominations();
+			nominations[j].resetNominations();
 		}
 		
 		for(Arbre arbre : mairie.getListArbre()) {
@@ -202,13 +205,19 @@ public class Association implements Notifiable {
 	
 	public void finExerciceBudgetaire() {
 		
+		ArrayList<Membre> aRevoquer = new ArrayList<Membre>();
+		
 		for(Membre membre : getListeMembres()) {
 			if(membre.getCotisationsAnnuelles().get(membre.getCotisationsAnnuelles().size()-1)==0) {
-				revoquer(membre);
+				aRevoquer.add(membre);
 			}
 			else {
 				membre.getCotisationsAnnuelles().add((float) 0);
 			}
+		}
+		
+		for(Membre membre : aRevoquer) {
+			revoquer(membre);
 		}
 		
 		budget.nouvelleAnnee();

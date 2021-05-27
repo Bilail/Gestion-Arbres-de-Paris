@@ -19,11 +19,12 @@ public class Personne implements Notifiable,Donateur {
 	 * @param adresse l'adresse de la Personne 
 	 * @param DateNaissance la date de naissance de la Personne 
 	 */
-	public Personne(String nom, String prenom, String adresse, String DateNaissance){
+	public Personne(String nom, String prenom, String adresse, String DateNaissance,float montant){
 		this.nom=nom;
 		this.prenom=prenom;
 		this.adresse=adresse;
 		this.DateNaissance= DateNaissance;
+		compte=new CompteBancaire("prenom"+"nom",montant);
 	}
 	
 	/**
@@ -58,13 +59,17 @@ public class Personne implements Notifiable,Donateur {
 		return adresse;
 	}
 	
+	
+	public CompteBancaire getCompte() {
+		return compte;
+	}
+	
 	/**
 	 * méthode notifiant une personne d'une action ayant eue lieu sur un arbre
 	 */
 	public void notifier(Notification notification){
 		notification.toString();
 	}
-	
 	
 	/**
 	 * Méthode permettant d'effectuer un don de particulier à association
@@ -74,5 +79,6 @@ public class Personne implements Notifiable,Donateur {
 		
 		Transaction transaction = new Transaction(montant, "don d'un particulier");
 		association.effectuerTransaction(transaction);
+		compte.calculSolde(-(montant));
 	}
 }

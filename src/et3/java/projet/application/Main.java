@@ -47,17 +47,22 @@ public class Main
 		
 		
 		// Création des Organismes 
+		
 		Municipalite mairie = new Municipalite();
 		mairie.setListeArbres(listeArbres);
 		Association asso = new Association(mairie);
-		//System.out.println(Mairie.getListArbre());
 		
-		// Création des membre  
-		Personne p1 = new Personne("BENYAHIA","Bilail","Villepinte","14/07/2000"); // si la fonction inscrire existe je ne vois pas l'utilité du constructeur membre ? 
-		System.out.println(p1);	                                                                  // justement inscrire utilise le contructeur de membre puis ajoute ce membre à la liste des membres de l'asso
-																									  // donc il faut créer une personne puis le fait de l'inscrire va créer un membre.
-		Personne p2 = new Personne("ALMEIDA","Natanael","Champlan","23/09/1999"); // dsl je ne connais pas ta date de naissance hihi ^^'
-		System.out.println(p2);																//j'ai fait la modif :p
+		// Création des personnes et des membres  
+		Personne p1 = new Personne("BENYAHIA","Bilail","Villepinte","14/07/2000", 440); 
+		System.out.println(p1);	                                                                  																						  
+		Personne p2 = new Personne("ALMEIDA","Natanael","Champlan","23/09/1999", 260); 
+		System.out.println(p2);	
+		Personne p3 = new Personne("DUPONT","Ludovic","Orsay","25/04/1989", 260); 
+		System.out.println(p2);
+		Personne p4 = new Personne("MILLARD","Manon","Champlan","23/09/1999", 260); 
+		System.out.println(p2);
+		Personne p5 = new Personne("ALMEIDA","Natanael","Champlan","23/09/1999", 260); 
+		System.out.println(p2);
 		
 		System.out.println("Avant inscription : ");
 		System.out.println(asso.getListeMembres());
@@ -68,9 +73,9 @@ public class Main
 		
 		// Partie Finance 
 		System.out.println("\n------Finance------\nle budget de l'asso est de : " + asso.getBudget().getSomme()); // On commence avec un budget de 0
-		//m1.Cotiser();
-		//m1.Cotiser();
-		System.out.println("\n Bilail a cotisé, le budget de l'asso est de : " + asso.getBudget().getSomme());
+		m1.Cotiser();
+		m1.Cotiser();
+		m2.Cotiser();
 		System.out.println("\n Cotisations de Bilail" + m1.getCotisationsAnnuelles()); 
 		
 		
@@ -92,7 +97,7 @@ public class Main
 		asso.finExerciceBudgetaire(); 
 		System.out.println(asso.getListeMembres());
 		System.out.println(asso.getBudget().getEBActuel());
-
+		System.out.println(m1);
 		 
 		};
 		

@@ -53,6 +53,10 @@ public class Budget {
 		getEBActuel().SauvegarderTransaction(transaction, this);
 	}
 	
+	/**
+	 * Méthode permettant de de changer d'année d'un point de vue du budget en stockant l'exercice budgetaire
+	 * et qui en crée un nouveau
+	 */
 	void nouvelleAnnee() {
 		listExercicesBudgetaires.add(new ExerciceBudgetaire(this,getEBActuel().getAnnee()+1));
 	}

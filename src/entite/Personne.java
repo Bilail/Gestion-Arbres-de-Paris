@@ -1,5 +1,6 @@
 package entite;
 import Asso.Association;
+import Asso.DemandeSubvention;
 import Asso.Notifiable;
 import Asso.Notification;
 import Asso.Transaction;
@@ -8,7 +9,7 @@ public class Personne implements Notifiable,Donateur {
 	
 	private String nom;
 	private String prenom;
-	private String DateNaissance; // je propose le type date directement 
+	private String DateNaissance; 
 	private String adresse;
 	private CompteBancaire compte;
 	
@@ -59,28 +60,31 @@ public class Personne implements Notifiable,Donateur {
 		return adresse;
 	}
 	
-	
+	/**
+	 * Méthode d'accès au compteBancaire de la Personne
+	 * @return le compteBancaire de la personne
+	 */
 	public CompteBancaire getCompte() {
 		return compte;
 	}
 	
-	/**
-	 * méthode notifiant une personne d'une action ayant eue lieu sur un arbre
-	 */
 	@Override
 	public void notifier(Notification notification){
 		System.out.println(notification);
 	}
 	
-	/**
-	 * Méthode permettant d'effectuer un don de particulier à association
-	 */
 	@Override
 	public void Donation(Association association, float montant) {
 		
 		Transaction transaction = new Transaction(montant, "don d'un particulier");
 		association.effectuerTransaction(transaction);
 		compte.calculSolde(-(montant));
+		association.ajouterDonateur(this);
+	}
+	
+	@Override
+	public void recevoirDemande(DemandeSubvention demande) {
+		System.out.println(demande);
 	}
 	
 	@Override

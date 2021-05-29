@@ -1,16 +1,17 @@
 package Asso;
 
-public class DemandeSubvention extends Notification {
+public class DemandeSubvention{
 	
 	private Budget budget;
+	private String description;
 	
 	/**
 	 * Contructeur d'une DemandeSubvention à partir du Budget de l'Association
 	 * @param description
 	 */
-	public DemandeSubvention(String description) {
-		super(description);
-		budget=budget; // A quoi sert cette ligne ? ? 
+	public DemandeSubvention(String description, Budget budget) {
+		this.description=description;
+		this.budget=budget;   // A quoi sert cette ligne ? ? 
 	}
 	
 	/**
@@ -20,11 +21,11 @@ public class DemandeSubvention extends Notification {
 	 */
 	@Override
 	public String toString() {
-		return super.toString() + "\n" +
+		return description + "\n" +
 			   "Rapport d'activité : " + "\n" +
-			   "Exercice budgétaire actuel : " + budget.getEBActuel().toString() + "\n" +
+			   "Exercice budgétaire actuel : " + budget.getEBActuel() + "\n" +
 			   "Exercice budgétaire précédent : " + 
-			   budget.getExercicesBudgetaires().get(budget.getExercicesBudgetaires().size()-1).toString();
+			   budget.getExercicesBudgetaires().get(budget.getExercicesBudgetaires().size()-1);
 	}
 
 }

@@ -11,16 +11,13 @@ public class Notification {
 	/**
 	 * Constructeur d'une notification prenant en compte les trois éléments d'une notification
 	 * @param DateNotification date d'émission de la notification
-	 * @param description description de l'action effectuée sur l'abre
+	 * @param description description de l'action effectuée sur l'arbre
 	 */
 	public Notification(String description) {
 		DateNotification = new Date();
 		this.description=description;
 	}
-	
-	/**
-	 * Redéfinition de la méthode toString() dans le cadre d'une Notification
-	 */
+
 	@Override
 	public String toString() {
 		return description + " le : " + DateNotification +" de l'arbre : ";

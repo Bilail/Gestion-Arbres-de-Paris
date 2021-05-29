@@ -106,20 +106,12 @@ public class Association implements Notifiable {
 	}
 	
 	/**
-	 * Methode d'accès à la listeDonateurs de l'association
-	 * @return la listeDonateur de l'association
-	 */
-	public ArrayList<Donateur> getDonateurs(){
-		return listeDonateurs;
-	}
-	
-	/**
 	 * Méthode permettant l'ajout d'un nouveau Donateur à la listeDonateurs de l'association
 	 * @param donateur un nouveau Donateur
 	 */
-	public void ajouterDonateur(Object objet) {
-		if(objet instanceof Donateur){
-			listeDonateurs.add((Donateur) objet);
+	public void ajouterDonateur(Donateur d) {
+		if(!getListeDonateurs().contains(d)){
+			listeDonateurs.add(d);
 		}
 	}
 	
@@ -139,14 +131,11 @@ public class Association implements Notifiable {
 		budget.CalculBudget(transaction);
 		}
 	}
-	
-	/**
-	 * méthode notifiant l'association d'une action ayant eue lieu sur un arbre
-	 */
+
 	@Override
 	public void notifier(Notification notification) {
 		System.out.println(notification + "\n");
-		}
+	}
 	
 	/**
 	 * Méthode permettant de transmettre à la mairie la liste des arbres qu'elle nomine pour être classifiés
@@ -198,6 +187,12 @@ public class Association implements Notifiable {
 		return nominations;
 	}
 	
+	/**
+	 * Méthode permettant de mettre fin à l'exercice budgetaire en cours 
+	 * et effectuer les actions telles que la révovation des membres n'ayant pas régle leurs cotisation annuelle
+	 * ou transmettre la liste d'abres nominés et changer d'année d'un point de vue de budget
+	 * @return la liste d'arbres nominés
+	 */
 	public Arbre[] finExerciceBudgetaire() {
 		
 		ArrayList<Membre> aRevoquer = new ArrayList<Membre>();
@@ -216,20 +211,14 @@ public class Association implements Notifiable {
 		}
 		
 		budget.nouvelleAnnee();
-		return nominer();
 		
+		return nominer();	
 	}
 	
-	private void demanderSubvention() {
-		for(Donateur donateur : listeDonateurs) {
-			
-		}
+	/**
+	 * Méthode permettant de demander une subvention
+	 */
+	private void demanderSubvention(Donateur donateur, String description) {
+		donateur.recevoirDemande(new DemandeSubvention(description,getBudget()));
 	}
-	
-	public static void main(String[] args) {
-		
-		
-	}
-	
-
 }

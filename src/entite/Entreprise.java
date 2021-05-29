@@ -1,6 +1,7 @@
 package entite;
 
 import Asso.Association;
+import Asso.DemandeSubvention;
 import Asso.Transaction;
 
 public class Entreprise implements Donateur {
@@ -26,6 +27,12 @@ public class Entreprise implements Donateur {
 		Transaction transaction = new Transaction(montant, "don d'une entreprise");
 		association.effectuerTransaction(transaction);
 		compte.calculSolde(-(montant));
+		association.ajouterDonateur(this);
+	}
+
+	@Override
+	public void recevoirDemande(DemandeSubvention demande) {
+		System.out.println(demande);
 	}
 	
 }

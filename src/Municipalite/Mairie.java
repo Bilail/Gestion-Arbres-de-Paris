@@ -2,6 +2,7 @@ package Municipalite;
 import java.util.ArrayList;
 
 import Asso.Association;
+import Asso.DemandeSubvention;
 import Asso.Notifiable;
 import Asso.Notification;
 import Asso.Transaction;
@@ -18,15 +19,7 @@ public class Mairie implements Donateur, Notifiable {
 	}
 	
 	
-	/**
-	 * Méthode permettant à la municipalité d'effectuer un don à une association
-	 */
-	public void Donation(Association association, float montant) {
-		
-		Transaction transaction = new Transaction(montant, "don de la municipalité");
-		association.effectuerTransaction(transaction);
-		association.ajouterDonateur((Object) this);
-	}
+	
 	
 	public ArrayList<Arbre> getListArbre(){
 		return listeArbres;
@@ -38,6 +31,18 @@ public class Mairie implements Donateur, Notifiable {
 	
 	public void setListeArbres(ArrayList<Arbre> liste_arbre) {
 		listeArbres = liste_arbre;
+	}
+
+	public void Donation(Association association, float montant) {
+		
+		Transaction transaction = new Transaction(montant, "don de la municipalité");
+		association.effectuerTransaction(transaction);
+		association.ajouterDonateur(this);
+	}
+
+	@Override
+	public void recevoirDemande(DemandeSubvention demande) {
+		System.out.println(demande);
 	}
 
 }

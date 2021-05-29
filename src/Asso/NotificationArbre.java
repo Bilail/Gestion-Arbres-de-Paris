@@ -1,5 +1,5 @@
 package Asso;
-import Mairie.Arbre;
+import Municipalite.Arbre;
 
 public class NotificationArbre extends Notification {
 	

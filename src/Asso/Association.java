@@ -4,8 +4,8 @@ package Asso;
 
 import java.util.ArrayList;
 
-import Mairie.Arbre;
-import Mairie.Municipalite;
+import Municipalite.Arbre;
+import Municipalite.Mairie;
 import entite.Donateur;
 import entite.Membre;
 import entite.Personne;
@@ -16,12 +16,12 @@ public class Association implements Notifiable {
 	private ArrayList<Donateur> listeDonateurs;
 	private ArrayList<Visite> visitesPlannifiees;
 	private Budget budget;
-	private Municipalite mairie;
+	private Mairie mairie;
 	
 	/**
 	 * Constructeur par défaut de l'association
 	 */
-	public Association(Municipalite mairie) {
+	public Association(Mairie mairie) {
 		listeMembres= new ArrayList<Membre>();
 		listeDonateurs=new ArrayList<Donateur>();
 		visitesPlannifiees=new ArrayList<Visite>();
@@ -49,7 +49,7 @@ public class Association implements Notifiable {
 	 * Méthode d'accès à la mairie à laquelle est associée l'Association
 	 * @return la mairie
 	 */
-	public Municipalite getMairie() {
+	public Mairie getMairie() {
 		return mairie;
 	}
 	

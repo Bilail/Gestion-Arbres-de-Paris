@@ -1,4 +1,4 @@
-package Mairie;
+package Municipalite;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Date;
@@ -6,14 +6,14 @@ import java.util.Date;
 import Asso.Notifiable;
 import Asso.Notification;
 import Asso.NotificationArbre;
-import Mairie.Municipalite;
+import Municipalite.Mairie;
 
 public class ServiceEspacesVerts {
 	
 	private ArrayList<Notifiable> notifiables; 
-	private Municipalite Mairie;
+	private Mairie Mairie;
 	
-	public ServiceEspacesVerts(Municipalite Mairie) {
+	public ServiceEspacesVerts(Mairie Mairie) {
 		this.Mairie = Mairie;
 		notifiables = new ArrayList<Notifiable>();
 	}

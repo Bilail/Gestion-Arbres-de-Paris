@@ -6,7 +6,7 @@ import Asso.Association;
 import Asso.CompteRendu;
 import Asso.Transaction;
 import Asso.Visite;
-import Mairie.Arbre;
+import Municipalite.Arbre;
 
 public class Membre extends Personne {
 	

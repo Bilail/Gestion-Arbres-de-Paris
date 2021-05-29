@@ -1,4 +1,4 @@
-package Mairie;
+package Municipalite;
 import java.awt.Point;
 import java.util.Date;
 

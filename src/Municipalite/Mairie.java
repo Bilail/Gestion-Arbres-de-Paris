@@ -1,4 +1,4 @@
-package Mairie;
+package Municipalite;
 import java.util.ArrayList;
 
 import Asso.Association;
@@ -7,13 +7,13 @@ import Asso.Notification;
 import Asso.Transaction;
 import entite.Donateur;
 
-public class Municipalite implements Donateur, Notifiable {
+public class Mairie implements Donateur, Notifiable {
 	
 	private ArrayList<Arbre> listeArbres;
 	private ServiceEspacesVerts SEV;
 	
 
-	public Municipalite() {
+	public Mairie() {
 		listeArbres = new ArrayList<Arbre>();
 	}
 	

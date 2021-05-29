@@ -5,14 +5,14 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 
-import Mairie.Arbre;
-import Mairie.Municipalite;
-import Mairie.ServiceEspacesVerts;
 import entite.Entreprise;
 import entite.Membre;
 import entite.Personne;
 import Asso.Association;
 import Asso.Facture;
+import Municipalite.Arbre;
+import Municipalite.Mairie;
+import Municipalite.ServiceEspacesVerts;
 import et3.java.projet.data.FileReader;
 import et3.java.projet.data.*;
 
@@ -50,7 +50,7 @@ public class Main
 		
 		// Création des Organismes 
 		
-		Municipalite mairie = new Municipalite();
+		Mairie mairie = new Mairie();
 		mairie.setListeArbres(listeArbres);
 		Association asso = new Association(mairie);
 		ServiceEspacesVerts EV = new ServiceEspacesVerts(mairie);

@@ -3,7 +3,8 @@ package Asso;
 import entite.Membre;
 
 import java.util.Date;
-import Mairie.Arbre;
+
+import Municipalite.Arbre;
 
 public class Visite {
 	

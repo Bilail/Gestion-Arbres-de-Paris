@@ -158,12 +158,6 @@ public class Association implements Notifiable {
 	 */
 	public Arbre[] nominer() {
 		
-		/*ArrayList<Arbre> nominations= new ArrayList<Arbre>();
-		
-		for(int i=0; i<5; i++) {
-			nominations.add(null);
-		}*/
-		
 		Arbre[] nominations=new Arbre[5];
 		
 		for(Membre membre : listeMembres) {

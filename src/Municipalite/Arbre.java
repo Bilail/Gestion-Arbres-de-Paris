@@ -1,5 +1,6 @@
 package Municipalite;
 import java.awt.Point;
+
 import java.util.Date;
 
 import Asso.CompteRendu;
@@ -57,90 +58,123 @@ public class Arbre {
 		this.dev = dev;
 	}
 	
+	/**
+	 * Méthode d'accès au genre de l'arbre
+	 * @return le genre
+	 */
 	public String getGenre() {
 		return genre;
 	}
 
-	private void setGenre(String genre) {
-		this.genre = genre;
-	}
-
+	/**
+	 * Méthode d'accès à l'espèce d'un arbre
+	 * @return l'espèce
+	 */
 	public String getEspece() {
 		return espece;
 	}
 
-	private void setEspece(String espece) {
-		this.espece = espece;
-	}
-
+	/**
+	 * Méthode d'accès au nom de l'arbre
+	 * @return le nom
+	 */
 	public String getNom() {
 		return nom;
 	}
 
-	private void setNom(String nom) {
-		this.nom = nom;
-	}
-
+	/**
+	 * Méthode d'accès au stade de dévoleppement de l'arbre
+	 * @return le stade de dévoleppement
+	 */
 	public String getDev() {
 		return dev;
 	}
 
-	private void setDev(String dev) {
-		this.dev = dev;
-	}
-
+	/**
+	 * Méthode d'accès à l'adresse de l'abre
+	 * @return
+	 */
 	public String getAdresse() {
 		return adresse;
 	}
 
-	void setAdresse(String adresse) {
-		this.adresse = adresse;
-	}
-
+	/**
+	 * Méthode d'accès à la circonference de l'arbre 
+	 * @return la circonférence
+	 */
 	public int getCirconference() {
 		return circonference;
 	}
 
-	private void setCirconference(int circonference) {
-		this.circonference = circonference;
-	}
-
+	/**
+	 * Méthode d'accès à la hauteur de l'arbre
+	 * @return la hauteur
+	 */
 	public int getHauteur() {
 		return hauteur;
 	}
 
-	private void setHauteur(int hauteur) {
-		this.hauteur = hauteur;
-	}
-
+	/**
+	 * Méthode d'accès au coordonnées GPS de l'arbre
+	 * @return le Point des coordonnées GPS
+	 */
 	public Float[] getGPS() {
 		return GPS;
 	}
-
-	void setGPS(Float[] GPS) {
-		this.GPS = GPS;
-	}
-
+	
+	/**
+	 * Méthode d'accès au caractère remarquable de l'arbre
+	 * @return le caractère remarquable de l'arbre
+	 */
 	public boolean getRemarquable() {
 		return remarquable;
 	}
 
-	void setRemarquable(boolean remarquable) {
-		this.remarquable = remarquable;
-	}
-
+	/**
+	 * Méthode d'accès à la date de dernière visite de l'arbre
+	 * @return la date de dernière visite
+	 */
 	public Date getDateDerniereVisite() {
 		return this.dateDerniereVisite;
 	}
-
+	
+	/**
+	 * Méthode d'accès à la date de classfication de l'arbre
+	 * @return la date de classification
+	 */
 	public Date getDateClassification() {
 		return dateClassification;
 	}
-
+	
+	/**
+	 * Méthode permettant de classifier un arbre comme remarquable
+	 * @param dateClassification la date à laquelle l'arbre est classifié comme remarquable 
+	 */
 	void classifier(Date dateClassification) {
 		this.dateClassification = dateClassification;
+		remarquable=true;
 	}
 	
+	/**
+	 * Methode d'accès à l'adresse d'un arbre
+	 * @param adresse l'adresse de l'arbre
+	 */
+	void setAdresse(String adresse) {
+		this.adresse = adresse;
+	}
+	
+	/**
+	 * Méthode d'accès aux coordonnées GPS de l'arbre
+	 * @param GPS tableau contenant les coordonnées GPS de l'arbre
+	 */
+	void setGPS(Float[] GPS) {
+		this.GPS = GPS;
+	}
+	
+	/**
+	 * Méthode d'accès à la liste des comptes rendus de l'arbre
+	 * @return la liste des comptes rendus de l'abre
+	 */
 	public ArrayList<CompteRendu> getListeComptesRendus() {
 		return listeComptesRendus;
 	}
@@ -196,23 +230,9 @@ public class Arbre {
 			   "\thauteur : " + getHauteur() + "\n" +
 			   "\tcoordonnées GPS : " + "(" + GPS[0] + "," + GPS[1] + ")" + "\n" +
 			   "\tcaractère remarquable : " + getRemarquable() + "\n" +
-			   "\tdate de dernière vidite : " + dateDerniereVisite + "\n" +
+			   "\tdate de dernière visite : " + dateDerniereVisite + "\n" +
 			   "\tdate de classification : " + dateClassification + "\n" +
 			   "\tcomptes rendus sur l'arbres : " + listeComptesRendus + "\n" +
 			   "\tnombre de nominations : " + getNbNominations() +"\n";
 	}
-	
-	
-	
-	public static void main(String[] args) {
-	
-		Arbre arbre = new Arbre("truc","bidule","chouette");
-		Float[] coordonne =  new Float[2];
-		coordonne[0] = (float) 1.1;
-		coordonne[1] = (float) 2.2;
-		arbre.setGPS(coordonne);
-		System.out.println(arbre);
-
-	}
-	
 }

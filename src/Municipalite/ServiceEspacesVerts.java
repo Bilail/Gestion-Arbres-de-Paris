@@ -24,9 +24,9 @@ public class ServiceEspacesVerts {
 	 * @param arbre un arbre
 	 * @param remarquable vaut true si l'arbre est remarquable, false sinon
 	 */
-	public void Classifier(Arbre arbre, boolean remarquable) {
+	public void classifier(Arbre arbre) {
 		
-		arbre.setRemarquable(remarquable);
+		arbre.classifier(new Date());
 		
 		Notification notification = new NotificationArbre("classification",arbre);
 		
@@ -36,25 +36,13 @@ public class ServiceEspacesVerts {
 	}
 	
 	/**
-	 *Méthode permettant la classification d'un arbre
-	 * @param arbre un arbre
-	 * @param remarquable vaut true si l'arbre est remarquable, false sinon
-	 * @param DateClassification date à laquelle l'arbre a été classifié
-	 */
-	public void Classifier (Arbre arbre, boolean remarquable, Date DateClassification) {
-		this.Classifier(arbre, remarquable);
-		arbre.classifier(DateClassification);
-		
-	}
-	
-	/**
 	 * Méthode permettant de planter un arbre à un endroit donné
 	 * @param arbre l'arbre à planté
 	 * @param GPS les futures coordonnées GPS l'arbre
 	 * @param Adresse la future adresse de l'arbre
 	 */
-	public void Planter(Arbre arbre,Float[] GPS, String Adresse) {
-		arbre.setAdresse(Adresse);
+	public void Planter(Arbre arbre,Float[] GPS, String adresse) {
+		arbre.setAdresse(adresse);
 		arbre.setGPS(GPS);
 		
 		Notification notification = new NotificationArbre("plantation",arbre);

@@ -8,6 +8,7 @@ import java.util.Date;
 import entite.Entreprise;
 import entite.Membre;
 import entite.Personne;
+import entite.President;
 import Asso.Association;
 import Asso.Facture;
 import Municipalite.Arbre;
@@ -59,20 +60,22 @@ public class Main
 	
 		// Création des personnes et des membres  
 		Personne p1 = new Personne("BENYAHIA","Bilail","Villepinte","14/07/2000", 440); 
-		System.out.println(p1);	                                                                  																						  
-		Personne p2 = new Personne("ALMEIDA","Natanael","Champlan","23/09/1999", 260); 
-		System.out.println(p2);	
-		Personne p3 = new Personne("DUPONT","Ludovic","Orsay","25/04/1989", 360); 
+		System.out.println(p1);
+		Personne p2 = new Personne("MAX","Aurelien","Champlan","12/04/1990", 420); // Quelle jeunesse!
+		System.out.println(p2);
+		Personne p3 = new Personne("BRASIER","Eugenie","Paris","01/01/1995", 890); //Quelle jeunesse!
 		System.out.println(p3);
-		Personne p4 = new Personne("MILLARD","Manon","Champlan","12/04/1995", 420); 
-		System.out.println(p4);
-		Personne p5 = new Personne("BRASIER","Eugenie","Paris","01/01/1989", 890); 
-		System.out.println(p5);
+		Personne p4 = new Personne("ALMEIDA","Natanael","Champlan","23/09/1999", 260); 
+		System.out.println(p2);	
+		Personne p5 = new Personne("DUPONT","Ludovic","Orsay","25/04/1989", 360); 
+		System.out.println(p3);
+		
 		
 		System.out.println("Avant inscription : ");
 		System.out.println(asso.getListeMembres());
 		Membre m1=asso.inscrire(p1);
-		Membre m2=asso.inscrire(p2);
+		President pres= new President(p2,asso); //Aucun fayotage bien sûr..
+		Membre m2=asso.inscrire(pres);
 		Membre m3=asso.inscrire(p3);
 		Membre m4=asso.inscrire(p4);
 		Membre m5=asso.inscrire(p5);
@@ -108,7 +111,7 @@ public class Main
 		System.out.println("\n------------  Visites ------------ \n");
 		Arbre arbre= asso.getArbresRemarquables().get(1);
 		m2.plannifierVisite(arbre, new Date());
-		m1.plannifierVisite(arbre, new Date()); //pas pris en compte car rentre en conflit avec la vidite de m2
+		m1.plannifierVisite(arbre, new Date()); //pas pris en compte car rentre en conflit avec la visite de m2
 		System.out.println(asso.getVisitesPlannifiees());
 		m2.effectuerVisite(m2.getProchaineVisite(), "joli petit arbre");
 		m2.nominer(arbre); // pas pris en compte car arbre déja nominé
@@ -130,7 +133,7 @@ public class Main
 		m2.nominer(a2); m2.nominer(a3); m2.nominer(a5); 
 		System.out.println(m1.getPrenom() + " a nominé : " + m1.getNominations());
 		m3.nominer(a1); m3.nominer(a2); m3.nominer(a3); m3.nominer(a4); m3.nominer(a4);m3.nominer(a6); // Il nomine 6 arbres donc a1 est ignoré 
-		System.out.println(m3.getPrenom() + " a nominé : " + m3.getNominations()); // de plus si une personne nomine 2 fois un même arbre, ce n'est pris en compte qu'une seule foi 
+		System.out.println(m3.getPrenom() + " a nominé : " + m3.getNominations()); // de plus si une personne nomine 2 fois un même arbre, ce n'est pris en compte qu'une seule fois 
 		
 		/* NBr de nomination par arbres
 		 * a1: 2 
@@ -160,7 +163,7 @@ public class Main
 		}
 		System.out.println(asso.getListeMembres()); // les membres qui n'ont pas cotisé ont été radié
 		System.out.println(asso.getBudget().getEBActuel());
-		System.out.println(asso.getListeMembres().contains(m4)); // sa retourne false elle a bien été radié
+		System.out.println(asso.getListeMembres().contains(m4)); //  retourne false elle a bien été radié
 		 
 		
 	

@@ -1,14 +1,14 @@
-package Asso;
+package asso;
 
 
 
 import java.util.ArrayList;
 
-import Municipalite.Arbre;
-import Municipalite.Mairie;
 import entite.Donateur;
 import entite.Membre;
 import entite.Personne;
+import municipalite.Arbre;
+import municipalite.Mairie;
 
 public class Association implements Notifiable {
 	
@@ -98,6 +98,7 @@ public class Association implements Notifiable {
 	/**
 	 * Methode permettant l'inscription d'une personne dans l'association
 	 * @param personne la personne à inscrire
+	 * @return le membre inscrit
 	 */
 	public Membre inscrire(Personne personne) {
 		Membre membre = new Membre (personne,this);
@@ -109,9 +110,9 @@ public class Association implements Notifiable {
 	 * Méthode permettant l'ajout d'un nouveau Donateur à la listeDonateurs de l'association
 	 * @param donateur un nouveau Donateur
 	 */
-	public void ajouterDonateur(Donateur d) {
-		if(!getListeDonateurs().contains(d)){
-			listeDonateurs.add(d);
+	public void ajouterDonateur(Donateur donateur) {
+		if(!getListeDonateurs().contains(donateur)){
+			listeDonateurs.add(donateur);
 		}
 	}
 	
@@ -142,8 +143,6 @@ public class Association implements Notifiable {
 	 * comme remarquables. Liste contenant les 5 arbres les plus nominés par les membres de l'association.
 	 * En cas d'égalité, on procède par circonférence et hauteur croissante. On réinitialise également les nominations
 	 * de chaque membre ainsi que le compteur de nominations pour chaque arbre.
-	 * @param mairie la Municipalite qui tient la liste d'arbres
-	 * @return les arbres nominés par l'association
 	 */
 	public Arbre[] nominer() {
 		

@@ -2,11 +2,11 @@ package entite;
 import java.util.ArrayList;
 import java.util.Date;
 
-import Asso.Association;
-import Asso.CompteRendu;
-import Asso.Transaction;
-import Asso.Visite;
-import Municipalite.Arbre;
+import asso.Association;
+import asso.CompteRendu;
+import asso.Transaction;
+import asso.Visite;
+import municipalite.Arbre;
 
 public class Membre extends Personne {
 	

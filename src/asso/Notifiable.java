@@ -1,4 +1,4 @@
-package Asso;
+package asso;
 
 public interface Notifiable {
 	

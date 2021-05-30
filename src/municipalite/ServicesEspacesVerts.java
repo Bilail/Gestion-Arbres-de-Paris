@@ -1,11 +1,11 @@
-package Municipalite;
+package municipalite;
 
 
 import java.util.ArrayList;
 import java.util.Date;
 
-import Asso.Notifiable;
-import Asso.Notification;
+import asso.Notifiable;
+import asso.Notification;
 
 
 
@@ -27,7 +27,6 @@ public class ServicesEspacesVerts {
 	/**
 	 * Méthode permettant la classification d'un arbre
 	 * @param arbre un arbre
-	 * @param remarquable vaut true si l'arbre est remarquable, false sinon
 	 */
 	public void classifier(Arbre arbre) {
 		

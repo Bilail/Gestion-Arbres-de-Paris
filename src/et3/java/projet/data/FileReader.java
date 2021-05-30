@@ -9,8 +9,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import Municipalite.Arbre;
-import Municipalite.Mairie;
+import municipalite.Arbre;
+import municipalite.Mairie;
 
 public class FileReader 
 {

@@ -1,10 +1,9 @@
-package Asso;
+package asso;
 
 import entite.Membre;
+import municipalite.Arbre;
 
 import java.util.Date;
-
-import Municipalite.Arbre;
 
 public class Visite {
 	

@@ -1,4 +1,4 @@
-package Asso;
+package asso;
 
 public class DemandeSubvention{
 	

@@ -1,16 +1,16 @@
-package Municipalite;
+package municipalite;
 
 
 
 import java.util.Date;
 
-import Asso.CompteRendu;
+import asso.CompteRendu;
 
 import java.util.ArrayList;
 
 public class Arbre {
 	
-	private String genre, espece, nom, dev, adresse;
+	private String genre, espece, dev, adresse;
 	private int circonference,hauteur;
 	private  Float[] GPS;
 	private boolean remarquable;
@@ -31,27 +31,24 @@ public class Arbre {
 	 * @param espece
 	 * @param nom
 	 */
-	public Arbre(String genre, String espece, String nom) {
+	public Arbre(String genre, String espece) {
 		this.genre=genre;
 		this.espece=espece;
-		this.nom=nom;
 	}
 	
 	/**
 	 * Constructeur complet 
-	 * @param genre
-	 * @param espece
-	 * @param nom
-	 * @param GPS
-	 * @param circonference
-	 * @param hauteur
-	 * @param remarquable
-	 * @param dev
+	 * @param genre le genre de l'arbre
+	 * @param espece l'espèce de l'arbre
+	 * @param nom le nom de l'arbre
+	 * @param GPS les coordonnées GPS de l'arbre dans un tableau
+	 * @param circonference la circonférence de l'arbre
+	 * @param hauteur la hauteur de l'arbre
+	 * @param remarquable le caractère remarquable de l'arbre
+	 * @param dev le stade de développement de l'arbre
 	 */
 	public Arbre(String genre, String espece, Float[] GPS, int circonference, int hauteur , boolean remarquable, String dev ) {
-		this.genre=genre;
-		this.espece=espece;
-		//this.nom=nom;
+		this(genre,espece);
 		this.GPS = GPS;
 		this.circonference = circonference;
 		this.hauteur = hauteur;
@@ -61,7 +58,7 @@ public class Arbre {
 	
 	/**
 	 * Méthode d'accès au genre de l'arbre
-	 * @return le genre
+	 * @return le genre de l'arbre
 	 */
 	public String getGenre() {
 		return genre;
@@ -69,23 +66,15 @@ public class Arbre {
 
 	/**
 	 * Méthode d'accès à l'espèce d'un arbre
-	 * @return l'espèce
+	 * @return l'espèce de l'abre
 	 */
 	public String getEspece() {
 		return espece;
 	}
 
 	/**
-	 * Méthode d'accès au nom de l'arbre
-	 * @return le nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-
-	/**
 	 * Méthode d'accès au stade de dévoleppement de l'arbre
-	 * @return le stade de dévoleppement
+	 * @return le stade de dévoleppement de l'arbre
 	 */
 	public String getDev() {
 		return dev;
@@ -93,7 +82,7 @@ public class Arbre {
 
 	/**
 	 * Méthode d'accès à l'adresse de l'abre
-	 * @return
+	 * @return l'adresse de l'arbre
 	 */
 	public String getAdresse() {
 		return adresse;
@@ -101,7 +90,7 @@ public class Arbre {
 
 	/**
 	 * Méthode d'accès à la circonference de l'arbre 
-	 * @return la circonférence
+	 * @return la circonférence de l'arbre
 	 */
 	public int getCirconference() {
 		return circonference;
@@ -109,7 +98,7 @@ public class Arbre {
 
 	/**
 	 * Méthode d'accès à la hauteur de l'arbre
-	 * @return la hauteur
+	 * @return la hauteur de l'arbre
 	 */
 	public int getHauteur() {
 		return hauteur;
@@ -117,7 +106,7 @@ public class Arbre {
 
 	/**
 	 * Méthode d'accès au coordonnées GPS de l'arbre
-	 * @return le Point des coordonnées GPS
+	 * @return les coordonnées GPS de l'arbre
 	 */
 	public Float[] getGPS() {
 		return GPS;
@@ -133,7 +122,7 @@ public class Arbre {
 
 	/**
 	 * Méthode d'accès à la date de dernière visite de l'arbre
-	 * @return la date de dernière visite
+	 * @return la date de dernière visite de l'arbre
 	 */
 	public Date getDateDerniereVisite() {
 		return this.dateDerniereVisite;
@@ -141,7 +130,7 @@ public class Arbre {
 	
 	/**
 	 * Méthode d'accès à la date de classfication de l'arbre
-	 * @return la date de classification
+	 * @return la date de classification de l'arbre
 	 */
 	public Date getDateClassification() {
 		return dateClassification;
@@ -211,6 +200,7 @@ public class Arbre {
 	
 	/**
 	 * Méthode permettant de visiter un arbre et de modifier sa listeCompteRendus ainsi que sa date de dernière visite
+	 * @param le CompteRendu à ajouter
 	 */
 	public void ajouterCompteRendu(CompteRendu compteRendu) {
 		dateDerniereVisite = compteRendu.getDate();
@@ -221,7 +211,6 @@ public class Arbre {
 	public String toString() {
 		return "\n" + "\tgenre : " + getGenre() + "\n" +
 			   "\tespece : " + getEspece() + "\n" +
-			   "\tnom : " + getNom() + "\n" +
 			   "\tdev : " + getDev() + "\n" +
 			   "\tadresse : " + getAdresse() + "\n" +
 			   "\tcirconference : " + getCirconference() + "\n" +

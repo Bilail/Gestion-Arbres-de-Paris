@@ -1,4 +1,4 @@
-package Asso;
+package asso;
 import java.util.Date;
 
 public class Transaction {

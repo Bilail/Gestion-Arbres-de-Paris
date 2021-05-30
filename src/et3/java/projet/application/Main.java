@@ -9,12 +9,12 @@ import entite.Entreprise;
 import entite.Membre;
 import entite.Personne;
 import entite.President;
-import Asso.Association;
-import Asso.Facture;
-import Municipalite.Arbre;
-import Municipalite.Mairie;
-import Municipalite.ServicesEspacesVerts;
+import asso.Association;
+import asso.Facture;
 import et3.java.projet.data.FileReader;
+import municipalite.Arbre;
+import municipalite.Mairie;
+import municipalite.ServicesEspacesVerts;
 import et3.java.projet.data.*;
 
 public class Main 

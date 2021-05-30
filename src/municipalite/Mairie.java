@@ -1,11 +1,11 @@
-package Municipalite;
+package municipalite;
 import java.util.ArrayList;
 
-import Asso.Association;
-import Asso.DemandeSubvention;
-import Asso.Notifiable;
-import Asso.Notification;
-import Asso.Transaction;
+import asso.Association;
+import asso.DemandeSubvention;
+import asso.Notifiable;
+import asso.Notification;
+import asso.Transaction;
 import entite.Donateur;
 
 public class Mairie implements Donateur, Notifiable {

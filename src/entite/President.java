@@ -1,6 +1,6 @@
 package entite;
 
-import Asso.Association;
+import asso.Association;
 
 public class President extends Membre {
 	

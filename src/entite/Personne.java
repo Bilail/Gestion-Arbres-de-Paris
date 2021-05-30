@@ -1,9 +1,9 @@
 package entite;
-import Asso.Association;
-import Asso.DemandeSubvention;
-import Asso.Notifiable;
-import Asso.Notification;
-import Asso.Transaction;
+import asso.Association;
+import asso.DemandeSubvention;
+import asso.Notifiable;
+import asso.Notification;
+import asso.Transaction;
 
 public class Personne implements Notifiable,Donateur {
 	

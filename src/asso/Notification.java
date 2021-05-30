@@ -1,16 +1,17 @@
-package Asso;
+package asso;
 import java.util.Date;
 
-import Municipalite.Arbre;
+import municipalite.Arbre;
 
 public class Notification {
 	
 	private Date DateNotification;
 	private String description;
 	private Arbre arbre;
+	
 	/**
 	 * Constructeur d'une notification prenant en compte les trois éléments d'une notification
-	 * @param DateNotification date d'émission de la notification
+	 * @param arbre l'abre concerné par l'action
 	 * @param description description de l'action effectuée sur l'arbre
 	 */
 	public Notification(String description, Arbre arbre) {

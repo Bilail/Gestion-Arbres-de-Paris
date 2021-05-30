@@ -1,6 +1,6 @@
 package entite;
-import Asso.Association;
-import Asso.DemandeSubvention;
+import asso.Association;
+import asso.DemandeSubvention;
 
 public interface Donateur {
 

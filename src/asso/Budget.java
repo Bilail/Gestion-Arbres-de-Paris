@@ -1,4 +1,4 @@
-package Asso;
+package asso;
 import java.util.ArrayList;
 
 public class Budget {
@@ -8,8 +8,7 @@ public class Budget {
 	private ArrayList<ExerciceBudgetaire> listExercicesBudgetaires;
 	
 	/**
-	 * Constructeur de Budget avec un montant initial
-	 * @param le montant initial du budget
+	 * Constructeur de Budget avec un montant initial nul
 	 */
 	public Budget() {
 		listExercicesBudgetaires= new ArrayList<ExerciceBudgetaire>();

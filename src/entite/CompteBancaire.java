@@ -2,7 +2,7 @@ package entite;
 
 import java.util.Date;
 
-import Asso.Transaction;
+import asso.Transaction;
 
 public class CompteBancaire {
 	

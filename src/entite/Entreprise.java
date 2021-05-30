@@ -1,8 +1,8 @@
 package entite;
 
-import Asso.Association;
-import Asso.DemandeSubvention;
-import Asso.Transaction;
+import asso.Association;
+import asso.DemandeSubvention;
+import asso.Transaction;
 
 public class Entreprise implements Donateur {
 	

@@ -72,7 +72,7 @@ public class Main
 		System.out.println(p3);
 		
 		
-		System.out.println("Avant inscription : ");
+		System.out.println("liste des membres Avant inscription : ");
 		System.out.println(asso.getListeMembres());
 		Membre m1=asso.inscrire(p1);
 		President pres= new President(p2,asso); //Aucun fayotage bien sûr..
@@ -80,7 +80,7 @@ public class Main
 		Membre m3=asso.inscrire(p3);
 		Membre m4=asso.inscrire(p4);
 		Membre m5=asso.inscrire(p5);
-		System.out.println("Après inscription : ");
+		System.out.println("liste des membres Après inscription : ");
 		System.out.println(asso.getListeMembres());
 		
 		// Partie Finance 
@@ -105,7 +105,7 @@ public class Main
 		Entreprise SKM = new Entreprise("SKM", 1000000);
 		System.out.println("\n Test entreprise : --------\nsolde avant don : " + SKM.getNom()+ " : " + SKM.getCompte().getSolde());
 		SKM.Donation(asso, 100);
-		System.out.println("\solde après don : " + SKM.getNom()+ " : " + SKM.getCompte().getSolde());
+		System.out.println("solde après don : " + SKM.getNom()+ " : " + SKM.getCompte().getSolde());
 		
 		
 		//Visites

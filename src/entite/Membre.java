@@ -148,7 +148,10 @@ public class Membre extends Personne {
 			association.getVisitesPlannifiees().remove(visite);
 		}
 	}
-	
+	/**
+	 * Permet à un membre de récuperer toutes ses infos 
+	 * @return un String contenant toutes les infos du membres
+	 */
 	public String RecupererInfo() {
 		StringBuilder info = new StringBuilder();
 		info.append(" Donnée de " +  this + "`nListe de contisation : " + listeCotisationsAnnuelles);

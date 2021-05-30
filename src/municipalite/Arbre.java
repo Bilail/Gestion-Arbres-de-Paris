@@ -209,14 +209,14 @@ public class Arbre {
 
 	@Override
 	public String toString() {
-		return "\n" + "\tgenre : " + getGenre() + "\n" +
-			   "\tespece : " + getEspece() + "\n" +
-			   "\tdev : " + getDev() + "\n" +
-			   "\tadresse : " + getAdresse() + "\n" +
-			   "\tcirconference : " + getCirconference() + "\n" +
-			   "\thauteur : " + getHauteur() + "\n" +
-			   "\tcoordonnées GPS : " + "(" + GPS[0] + "," + GPS[1] + ")" + "\n" +
-			   "\tcaractère remarquable : " + getRemarquable() + "\n" +
+		return "\n" + "\tgenre : " + getGenre() + " | " +
+			   "espece : " + getEspece() + " | " +
+			   "dev : " + getDev() + " | " +
+			   "adresse : " + getAdresse() + "\n" +
+			   "\tcirconference : " + getCirconference() + " | " +
+			   "hauteur : " + getHauteur() + " | " +
+			   "coordonnées GPS : " + "(" + GPS[0] + "," + GPS[1] + ")" + " | " +
+			   "caractère remarquable : " + getRemarquable() + "\n" +
 			   "\tdate de dernière visite : " + dateDerniereVisite + "\n" +
 			   "\tdate de classification : " + dateClassification + "\n" +
 			   "\tcomptes rendus sur l'arbres : " + listeComptesRendus + "\n" +

@@ -158,6 +158,9 @@ public class Main
 		// l'Exercice Budgetaire 
 		System.out.println(asso.getBudget().getEBActuel());
 		
+		System.out.println("----- Envoie des demandes de Subvention -----");
+		asso.demanderSubvention(SKM, "achat nouveau batiment");
+		
 		System.out.println("les arbres nominé sont : ");
 		for (Arbre a : asso.finExerciceBudgetaire()) {
 			System.out.println(a);
@@ -166,8 +169,9 @@ public class Main
 		System.out.println(asso.getBudget().getEBActuel());
 		System.out.println(asso.getListeMembres().contains(m4)); //  retourne false elle a bien été radié
 		 
-		
-	
+		//Demande de subvention 
+		System.out.println("----- Envoie des demandes de Subvention -----");
+		asso.demanderSubvention(SKM, "achat nouveau batiment");
 		
 		
 		};

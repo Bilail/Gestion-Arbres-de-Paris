@@ -43,7 +43,7 @@ public class ServicesEspacesVerts {
 	 * Méthode permettant de planter un arbre à un endroit donné
 	 * @param arbre l'arbre à planté
 	 * @param GPS les futures coordonnées GPS l'arbre
-	 * @param Adresse la future adresse de l'arbre
+	 * @param adresse la future adresse de l'arbre
 	 */
 	public void Planter(Arbre arbre,Float[] GPS, String adresse) {
 		arbre.setAdresse(adresse);

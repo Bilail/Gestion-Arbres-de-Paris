@@ -217,7 +217,7 @@ public class Association implements Notifiable {
 	/**
 	 * Méthode permettant de demander une subvention
 	 */
-	private void demanderSubvention(Donateur donateur, String description) {
+	public void demanderSubvention(Donateur donateur, String description) {
 		donateur.recevoirDemande(new DemandeSubvention(description,getBudget()));
 	}
 }

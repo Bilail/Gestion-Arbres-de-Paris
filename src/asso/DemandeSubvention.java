@@ -11,7 +11,7 @@ public class DemandeSubvention{
 	 */
 	public DemandeSubvention(String description, Budget budget) {
 		this.description=description;
-		this.budget=budget;   // A quoi sert cette ligne ? ? 
+		this.budget=budget;  
 	}
 	
 	/**
@@ -21,11 +21,18 @@ public class DemandeSubvention{
 	 */
 	@Override
 	public String toString() {
-		return description + "\n" +
+		if (budget.getExercicesBudgetaires().size() == 1){
+			return description + "\n" +
+					   "Rapport d'activité : " + "\n" +
+					   "\tExercice budgétaire actuel : " + budget.getEBActuel() + "\n";
+		}
+		else {
+			return description + "\n" +
 			   "Rapport d'activité : " + "\n" +
-			   "Exercice budgétaire actuel : " + budget.getEBActuel() + "\n" +
-			   "Exercice budgétaire précédent : " + 
-			   budget.getExercicesBudgetaires().get(budget.getExercicesBudgetaires().size()-1);
+			   "\tExercice budgétaire actuel : " + budget.getEBActuel() + "\n" +
+			   "\tExercice budgétaire précédent : " + 
+			   budget.getExercicesBudgetaires().get(budget.getExercicesBudgetaires().size()-2);
+		}
 	}
 
 }

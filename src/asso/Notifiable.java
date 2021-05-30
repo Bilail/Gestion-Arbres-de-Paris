@@ -4,7 +4,7 @@ public interface Notifiable {
 	
 	/**
 	 * méthode notifiant d'une action ayant eue lieu sur un arbre
-	 * @param notification
+	 * @param notification, message 
 	 */
 	void recevoirNotification(Notification notification);
 }

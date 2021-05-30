@@ -19,6 +19,7 @@ public class Personne implements Notifiable,Donateur {
 	 * @param prenom le Prenom de la personne 
 	 * @param adresse l'adresse de la Personne 
 	 * @param DateNaissance la date de naissance de la Personne 
+	 * @param montant le montant sur le CompteBancaire de la Personne
 	 */
 	public Personne(String nom, String prenom, String adresse, String DateNaissance,float montant){
 		this.nom=nom;
@@ -69,7 +70,7 @@ public class Personne implements Notifiable,Donateur {
 	}
 	
 	@Override
-	public void notifier(Notification notification){
+	public void recevoirNotification(Notification notification){
 		System.out.println(notification);
 	}
 	

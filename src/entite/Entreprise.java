@@ -9,15 +9,28 @@ public class Entreprise implements Donateur {
 	private String nom;
 	private CompteBancaire compte;
 	
+	/**
+	 * Constructeur d'une Entreprise
+	 * @param nom le nom de l'entreprise
+	 * @param montant le montant dont l'Entreprise dispose sur son Compte
+	 */
 	public Entreprise(String nom, float montant) {
 		this.nom=nom;
 		compte=new CompteBancaire("nom",montant);
 	}
 	
+	/**
+	 * Méthode d'acès au CompteBancaire de l'Entreprise
+	 * @return le CompteBancaire de l'Entreprise
+	 */
 	public CompteBancaire getCompte() {
 		return compte;
 	}
-
+	
+	/**
+	 * Méthode d'accès au nom de l'Entreprise
+	 * @return le nom de l'entreprise
+	 */
 	public String getNom() {
 		return nom;
 	}

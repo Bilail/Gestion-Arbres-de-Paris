@@ -1,19 +1,24 @@
 package Municipalite;
-import java.awt.Point;
+
+
 import java.util.ArrayList;
 import java.util.Date;
 
 import Asso.Notifiable;
 import Asso.Notification;
-import Asso.NotificationArbre;
-import Municipalite.Mairie;
 
-public class ServiceEspacesVerts {
+
+
+public class ServicesEspacesVerts {
 	
 	private ArrayList<Notifiable> notifiables; 
 	private Mairie Mairie;
 	
-	public ServiceEspacesVerts(Mairie Mairie) {
+	/**
+	 * Constructeur des servives espaces verts
+	 * @param Mairie la mairie à laquelle les SEV sont associés
+	 */
+	public ServicesEspacesVerts(Mairie Mairie) {
 		this.Mairie = Mairie;
 		notifiables = new ArrayList<Notifiable>();
 	}
@@ -28,10 +33,10 @@ public class ServiceEspacesVerts {
 		
 		arbre.classifier(new Date());
 		
-		Notification notification = new NotificationArbre("classification",arbre);
+		Notification notification = new Notification("classification",arbre);
 		
 		for(Notifiable i :notifiables) {
-			i.notifier(notification);
+			i.recevoirNotification(notification);
 		}
 	}
 	
@@ -45,10 +50,10 @@ public class ServiceEspacesVerts {
 		arbre.setAdresse(adresse);
 		arbre.setGPS(GPS);
 		
-		Notification notification = new NotificationArbre("plantation",arbre);
+		Notification notification = new Notification("plantation",arbre);
 		
 		for(Notifiable i :notifiables) {
-			i.notifier(notification);
+			i.recevoirNotification(notification);
 		}
 	}
 	
@@ -58,21 +63,21 @@ public class ServiceEspacesVerts {
 	 */
 	public void Abattre(Arbre arbre) {
 	
-		Notification notification = new NotificationArbre("Abattage",arbre);
+		Notification notification = new Notification("Abattage",arbre);
 		
 		for(Notifiable i :notifiables) {
-			i.notifier(notification);
+			i.recevoirNotification(notification);
 		}
 		Mairie.getListArbre().remove(arbre);
 		arbre=null;
 	}
 	
-	public void ajoutNotifiable(Notifiable n) {
-		notifiables.add(n);
-	}
-	public static void main(String[] args) {
-	
-
+	/**
+	 * Méthode permettant de maintenir à jour la liste de personne à notifier pour des actions sur un arbre
+	 * @param notifiable un notifiable
+	 */
+	public void ajoutNotifiable(Notifiable notifiable) {
+		notifiables.add(notifiable);
 	}
 
 }

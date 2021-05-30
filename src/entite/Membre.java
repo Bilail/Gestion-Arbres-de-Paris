@@ -80,6 +80,10 @@ public class Membre extends Personne {
 		}
 	}
 	
+	/**
+	 * Méthode permettant à un Membre de nominer un arbre dans la limite de 5 arbres
+	 * @param arbre l'arbre à nominer
+	 */
 	public void nominer(Arbre arbre) {
 		
 		
@@ -101,7 +105,9 @@ public class Membre extends Personne {
 	}
 	
 	/**
-	 * Méthode permettant à un membre de plannifier une visite
+	 * Méthode permettant à un Membre de plannifier une visite 
+	 * @param arbre, l'arbre qu'il souhaite visiter
+	 * @param date la date à laquelle le Membre souhaite effectuer la visite
 	 */
 	public void plannifierVisite(Arbre arbre, Date date) {
 		
@@ -131,6 +137,7 @@ public class Membre extends Personne {
 	/**
 	 * Méthode permettant à un membre d'effectuer une visite préalablement plannifiée
 	 * @param visite la visite à effectuer
+	 * @param bilan les commentaires éventuels du Membre sur l'arbre visité
 	 */
 	public void effectuerVisite(Visite visite, String bilan) {
 		
@@ -146,4 +153,5 @@ public class Membre extends Personne {
 	public String toString() {
 		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + " depuis  " + dateInscription;
 	}
+	
 }

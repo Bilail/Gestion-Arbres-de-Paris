@@ -13,7 +13,7 @@ import Asso.Association;
 import Asso.Facture;
 import Municipalite.Arbre;
 import Municipalite.Mairie;
-import Municipalite.ServiceEspacesVerts;
+import Municipalite.ServicesEspacesVerts;
 import et3.java.projet.data.FileReader;
 import et3.java.projet.data.*;
 
@@ -54,8 +54,9 @@ public class Main
 		Mairie mairie = new Mairie();
 		mairie.setListeArbres(listeArbres);
 		Association asso = new Association(mairie);
-		ServiceEspacesVerts EV = new ServiceEspacesVerts(mairie);
-		EV.ajoutNotifiable(asso);
+		ServicesEspacesVerts sev = new ServicesEspacesVerts(mairie);
+		mairie.setSEV(sev);
+		sev.ajoutNotifiable(asso);
 
 	
 		// Création des personnes et des membres  
@@ -110,8 +111,8 @@ public class Main
 		//Visites
 		System.out.println("\n------------  Visites ------------ \n");
 		Arbre arbre= asso.getArbresRemarquables().get(1);
-		m2.plannifierVisite(arbre, new Date());
-		m1.plannifierVisite(arbre, new Date()); //pas pris en compte car rentre en conflit avec la visite de m2
+		m2.plannifierVisite(arbre, new Date());  //On plannifie une visite instantannée
+		m1.plannifierVisite(arbre, new Date());  //pas pris en compte car rentre en conflit avec la visite de m2
 		System.out.println(asso.getVisitesPlannifiees());
 		m2.effectuerVisite(m2.getProchaineVisite(), "joli petit arbre");
 		m2.nominer(arbre); // pas pris en compte car arbre déja nominé
@@ -149,7 +150,7 @@ public class Main
 		Arbre a7 = mairie.getListArbre().get(7);
 		System.out.println("----- Les abattages -----\n avant :" + mairie.getListArbre().get(7));
 		
-		EV.Abattre(a7);
+		sev.Abattre(a7);
 		System.out.println("\napres : " + mairie.getListArbre().get(7) ); // l'arbre a bien été supprimé et remplacé
 		
 		

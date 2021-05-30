@@ -9,8 +9,8 @@ public class Transaction {
 	
 	/**
 	 * Constructeur d'une operation prenant en compte les informations
-	 * @param montant
-	 * @param description
+	 * @param montant le montant de la transaction
+	 * @param description la description de la transaction
 	 */
 	public Transaction(float montant, String description) {
 		this.montant=montant;
@@ -20,7 +20,7 @@ public class Transaction {
 	
 	/**
 	 * Methode d'accès au montant de la Transaction
-	 * @return
+	 * @return le montant de la transaction
 	 */
 	public float getMontant() {
 		return montant;
@@ -28,7 +28,7 @@ public class Transaction {
 	
 	/**
 	 * Methode d'accès à la description de la Transaction
-	 * @return
+	 * @return la description de la transaction
 	 */
 	public String getDescription() {
 		return description;
@@ -36,7 +36,7 @@ public class Transaction {
 	
 	/**
 	 * Méthode d'accès à la date de la Transaction
-	 * @return
+	 * @return la date de la transaction
 	 */
 	public Date getDate() {
 		return date;

@@ -1,5 +1,6 @@
 package Municipalite;
-import java.awt.Point;
+
+
 
 import java.util.Date;
 
@@ -216,9 +217,6 @@ public class Arbre {
 		getListeComptesRendus().add(compteRendu);
 	}
 
-	/**
-	 * Redéfinition de la méthode toString() dans le cadre d'un Arbre
-	 */
 	@Override
 	public String toString() {
 		return "\n" + "\tgenre : " + getGenre() + "\n" +

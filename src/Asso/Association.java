@@ -133,7 +133,7 @@ public class Association implements Notifiable {
 	}
 
 	@Override
-	public void notifier(Notification notification) {
+	public void recevoirNotification(Notification notification) {
 		System.out.println(notification + "\n");
 	}
 	

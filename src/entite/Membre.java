@@ -149,6 +149,12 @@ public class Membre extends Personne {
 		}
 	}
 	
+	public String RecupererInfo() {
+		StringBuilder info = new StringBuilder();
+		info.append(" Donnée de " +  this + "`nListe de contisation : " + listeCotisationsAnnuelles);
+		return info.toString();
+		}
+	
 	@Override
 	public String toString() {
 		return "\n Nom : " + getNom() + " prénom : " + getPrenom() + "\n inscrit : " + " depuis  " + dateInscription;

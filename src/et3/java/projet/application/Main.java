@@ -152,7 +152,7 @@ public class Main
 		
 		sev.Abattre(a7);
 		System.out.println("\napres : " + mairie.getListArbre().get(7) ); // l'arbre a bien été supprimé et remplacé
-		
+		System.out.println("L'arbre a bien été remplacé par l'arbre suivant dans la liste, il a donc bien été abbatu");
 		
 		
 		// l'Exercice Budgetaire 

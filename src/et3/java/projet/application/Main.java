@@ -159,7 +159,7 @@ public class Main
 		System.out.println(asso.getBudget().getEBActuel());
 		
 		System.out.println("----- Envoie des demandes de Subvention -----");
-		asso.demanderSubvention(SKM, "achat nouveau batiment");
+		asso.demanderSubvention(SKM, "paiment de facture et agrandissement");
 		
 		System.out.println("les arbres nominé sont : ");
 		for (Arbre a : asso.finExerciceBudgetaire()) {
@@ -167,7 +167,7 @@ public class Main
 		}
 		System.out.println(asso.getListeMembres()); // les membres qui n'ont pas cotisé ont été radié
 		System.out.println(asso.getBudget().getEBActuel());
-		System.out.println(asso.getListeMembres().contains(m4)); //  retourne false elle a bien été radié
+		System.out.println("vérification si " + m4 + " est biand l'association : " + asso.getListeMembres().contains(m4)); //  retourne false elle a bien été radié
 		 
 		//Demande de subvention 
 		System.out.println("----- Envoie des demandes de Subvention -----");
